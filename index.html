@@ -289,29 +289,6 @@
       box-shadow: 0 12px 34px rgba(31, 63, 48, 0.07);
     }
 
-    .infographic-wrap {
-      padding: 28px;
-      border-radius: 34px;
-      background: rgba(255, 250, 240, 0.72);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-
-    .infographic-wrap img {
-      width: 100%;
-      border-radius: 22px;
-      border: 1px solid rgba(47, 93, 68, 0.14);
-      background: var(--cream-2);
-    }
-
-    .image-note {
-      margin: 14px 0 0;
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
-      color: var(--muted);
-      text-align: center;
-    }
-
     .split {
       display: grid;
       grid-template-columns: 0.92fr 1.08fr;
@@ -363,7 +340,8 @@
       margin-bottom: 4px;
     }
 
-    .camp-box {
+    .camp-box,
+    .team-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 22px;
@@ -386,33 +364,66 @@
       border: 1px solid rgba(47, 93, 68, 0.16);
     }
 
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    article.card {
-      display: flex;
-      flex-direction: column;
-      min-height: 260px;
-    }
-
-    .meta {
-      margin-bottom: 14px;
-      font-family: Arial, sans-serif;
-      font-size: 0.78rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .read-more {
-      margin-top: auto;
-      padding-top: 18px;
-      font-family: Arial, sans-serif;
-      font-weight: 700;
+    .price {
+      font-size: 2.2rem;
       color: var(--green-dark);
+      font-weight: 700;
+      margin: 10px 0 4px;
+    }
+
+    .small-note {
+      font-family: Arial, sans-serif;
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 28px 0;
+    }
+
+    .info-tile {
+      background: rgba(255, 250, 240, 0.78);
+      border: 1px solid rgba(47, 93, 68, 0.16);
+      border-radius: 22px;
+      padding: 20px;
+    }
+
+    .info-tile strong {
+      display: block;
+      font-family: Arial, sans-serif;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+
+    .info-tile span {
+      color: #435348;
+    }
+
+    .infographic-wrap {
+      padding: 28px;
+      border-radius: 34px;
+      background: rgba(255, 250, 240, 0.72);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .infographic-wrap img {
+      width: 100%;
+      border-radius: 22px;
+      border: 1px solid rgba(47, 93, 68, 0.14);
+      background: var(--cream-2);
+    }
+
+    .image-note {
+      margin: 14px 0 0;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
     }
 
     .contact {
@@ -455,9 +466,10 @@
       .hero-grid,
       .split,
       .camp-box,
+      .team-grid,
       .contact { grid-template-columns: 1fr; }
       .cards,
-      .blog-grid { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
       .contact { padding: 30px; }
       .footer-row { flex-direction: column; }
     }
@@ -490,12 +502,13 @@
           <li><a href="#arsdoma">ARSDOMA</a></li>
           <li><a href="#pilot">Pilot</a></li>
           <li><a href="#camp">Nyári tábor</a></li>
+          <li><a href="#team">Kik vagyunk?</a></li>
           <li><a href="#blog">Blog</a></li>
           <li><a href="#contact">Kapcsolódás</a></li>
         </ul>
       </nav>
 
-      <a class="button" href="#contact">Érdekel</a>
+      <a class="button" href="#camp">Tábor</a>
     </div>
   </header>
 
@@ -587,7 +600,7 @@
             amely az ARSDOMA alapját adja.
           </p>
           <p class="section-intro">
-            A pilot nem azonos a nyári táborral. A tábor az első konkrét tér, ahol ez a szemlélet gyerekekkel,
+            A nyári tábor az első konkrét tér, ahol ez a szemlélet gyerekekkel,
             szülőkkel és szakemberekkel együtt elkezdhet működésbe lépni.
           </p>
         </div>
@@ -619,8 +632,8 @@
 
           <div class="step">
             <div>
-              <strong>Közös tanulás a tapasztalatból</strong>
-              A felnőtt team folyamatosan figyel, egyeztet és tanul abból, ami a gyerekekkel történik.
+              <strong>Közös szakmai figyelem</strong>
+              A felnőtt team folyamatosan egyeztet és tanul abból, ami a gyerekekkel történik.
               Így a folyamat nem merev program, hanem alakuló közös tér.
             </div>
           </div>
@@ -649,15 +662,58 @@
 
     <section id="camp">
       <div class="container">
-        <div class="eyebrow">Nyári tábor</div>
+        <div class="eyebrow">Nyári tábor · ARSDOMA pilot</div>
         <h2>Tábor, ahol nem a sablonokat követjük, hanem teret adunk.</h2>
+
         <p class="section-intro">
-          Az ARSDOMA első pilotja egy kislétszámú nyári táborral indul 8–12 éves gyerekeknek.
-          Olyan biztonságos, figyelmes közeget szeretnénk létrehozni, ahol a gyerekek saját érdeklődése,
+          Az ARSDOMA első gyakorlati pilotja egy kislétszámú nyári táborral indul 8–12 éves gyerekeknek.
+          Olyan figyelmes, kapcsolódásra és alkotásra épülő közeget hozunk létre, ahol a gyerekek saját érdeklődése,
           kreativitása és erősségei kerülhetnek előtérbe.
         </p>
 
+        <div class="info-grid">
+          <div class="info-tile">
+            <strong>Korosztály</strong>
+            <span>8–12 éves gyerekek</span>
+          </div>
+
+          <div class="info-tile">
+            <strong>Részvételi díj</strong>
+            <span>75 000 Ft</span>
+          </div>
+
+          <div class="info-tile">
+            <strong>Helyszín</strong>
+            <span>Breznó vagy Budapest, Gellérthegy</span>
+          </div>
+
+          <div class="info-tile">
+            <strong>Időpont</strong>
+            <span>Idősávválasztás az űrlapon</span>
+          </div>
+        </div>
+
         <div class="camp-box">
+          <div class="panel">
+            <h3>Konkrét információk</h3>
+            <ul class="detail-list">
+              <li><strong>Lehetséges helyszínek:</strong><br>Breznó vagy Budapest, Gellérthegy, Somlói út 50., 1118</li>
+              <li><strong>Részvételi díj:</strong><br>75 000 Ft</li>
+              <li><strong>Idősávok:</strong><br>az érdeklődési / jelentkezési űrlapon választhatók</li>
+              <li><strong>Jelentkezés:</strong><br>az űrlap kitöltésével lehet érdeklődni és időpontot egyeztetni</li>
+            </ul>
+
+            <div class="hero-actions" style="margin-top:22px;">
+              <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSc4Gzrqk974YVJ26c-Bu-p1VdqXYYyNC51C-GEOnLcMr-cZow/viewform" target="_blank" rel="noopener noreferrer">
+                Űrlap megnyitása
+              </a>
+            </div>
+
+            <p class="small-note">
+              A pontos helyszín és időpont a jelentkezések, az elérhető idősávok és a csoport összetétele alapján véglegesül.
+            </p>
+          </div>
+
           <div class="panel">
             <h3>Kiknek szól?</h3>
             <ul class="detail-list">
@@ -667,16 +723,112 @@
               <li>akik szívesen kapcsolódnak más gyerekekhez, de ehhez időre és biztonságos térre van szükségük</li>
             </ul>
           </div>
+        </div>
+
+        <div class="wide-card" style="margin-top:24px;">
+          <h3>Mit szeretnénk adni?</h3>
+          <p>
+            Figyelmes felnőttkísérést, sikerélményt az alkotásban, örömteli tanulási és kísérletezési helyzeteket,
+            kapcsolódást, közös játékot és együtt gondolkodást. A cél az, hogy a gyerekek ne egy előre gyártott
+            programhoz alkalmazkodjanak, hanem olyan térbe érkezzenek, ahol láthatóbbá válhat, mi mozgatja őket belülről.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="parent-info">
+      <div class="container">
+        <div class="eyebrow">Szülőknek</div>
+        <h2>Mit jelent ez a gyakorlatban?</h2>
+
+        <p class="section-intro">
+          A tábor nem hagyományos értelemben vett programcsomag. Nem az a célunk, hogy minden percet előre
+          kitöltsünk, hanem hogy olyan keretet tartsunk, amelyben a gyerekek kíváncsisága, kapcsolódása és
+          alkotókedve természetesebben megjelenhet.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Nem teljesítményt várunk</h3>
+            <p>
+              A gyerekeknek nem kell bizonyítaniuk. A hangsúly azon van, hogy biztonságosabb legyen próbálkozni,
+              hibázni, újrakezdeni és saját módon kapcsolódni.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Nem előre gyártott élményt adunk</h3>
+            <p>
+              A tevékenységek irányt adnak, de a folyamatot a gyerekek érdeklődése és a csoport alakulása is formálja.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Szakmai teammunka kíséri</h3>
+            <p>
+              A felnőttek nem egyedül „viszik” a tábort: folyamatos közös szakmai egyeztetés és reflektív teammunka
+              segíti a gyerekekhez való figyelmes kapcsolódást.
+            </p>
+          </div>
+        </div>
+
+        <div class="wide-card" style="margin-top:24px;">
+          <h3>Részletes szülői tájékoztató</h3>
+          <p>
+            A részletesebb tájékoztatóban bemutatjuk a tábor szemléletét, a gyerekekkel való munka alapelveit,
+            a kapcsolódás és alkotás szerepét, valamint a jelentkezéshez kapcsolódó gyakorlati tudnivalókat.
+          </p>
+          <div class="hero-actions" style="margin-top:22px;">
+            <a class="button" href="ARSDOMA_szuloi_tajekoztato_QR_taskan_felirattal.pdf" target="_blank" rel="noopener noreferrer">
+              Szülői tájékoztató megnyitása
+            </a>
+            <a class="button secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSc4Gzrqk974YVJ26c-Bu-p1VdqXYYyNC51C-GEOnLcMr-cZow/viewform" target="_blank" rel="noopener noreferrer">
+              Jelentkezési / érdeklődési űrlap
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="container">
+        <div class="eyebrow">Kik vagyunk?</div>
+        <h2>Szakmai háttér a tábor mögött.</h2>
+
+        <p class="section-intro">
+          Az ARSDOMA nem kész programként, hanem alakuló szakmai és kapcsolati térként indul.
+          A tábor mögött pszichológiai, pedagógiai és alkotói gondolkodás, valamint folyamatos szakmai reflexió áll.
+        </p>
+
+        <div class="team-grid">
+          <div class="panel">
+            <h3>Bódis András</h3>
+            <p>
+              Klinikai szakpszichológus, az ARSDOMA alapítója. Több mint tíz év pszichiátriai és pszichoterápiás
+              szakmai tapasztalatra építve dolgozik azon, hogyan lehet a tanulást, az alkotást és a kapcsolódást
+              a gyerekek mentális egészségének és önazonos fejlődésének szolgálatába állítani.
+            </p>
+            <div class="hero-actions" style="margin-top:20px;">
+              <a class="button secondary" href="https://www.linkedin.com/in/andr%C3%A1s-b%C3%B3dis-30696026/" target="_blank" rel="noopener noreferrer">
+                LinkedIn profil
+              </a>
+            </div>
+          </div>
 
           <div class="panel">
-            <h3>Mit szeretnénk adni?</h3>
-            <ul class="detail-list">
-              <li>figyelmes felnőttkísérést</li>
-              <li>sikerélményt az alkotásban</li>
-              <li>örömteli tanulási és kísérletezési helyzeteket</li>
-              <li>kapcsolódást, közös játékot és együtt gondolkodást</li>
-              <li>teret ahhoz, hogy láthatóbbá váljon, mi mozgatja a gyereket belülről</li>
-            </ul>
+            <h3>Dr. Domonkos Katalin</h3>
+            <p>
+              Az ARSDOMA társalapítója. Szakmai és alkotói jelenléte az ARSDOMA közös gondolkodásának,
+              kapcsolati szemléletének és gyakorlati formálódásának meghatározó része.
+            </p>
+            <div class="hero-actions" style="margin-top:20px;">
+              <a class="button secondary" href="#" target="_blank" rel="noopener noreferrer">
+                LinkedIn profil
+              </a>
+            </div>
+            <p class="small-note">
+              Itt majd cseréld ki a <strong>#</strong> jelet Kati pontos LinkedIn-profiljának linkjére.
+            </p>
           </div>
         </div>
       </div>
@@ -719,8 +871,12 @@
           </div>
 
           <div class="hero-actions">
-            <a class="button" style="background:#fff7e8;color:#1f3f30;border-color:#fff7e8" href="https://forms.gle/Kg2Vyx1yGuTB9LeXA" target="_blank" rel="noopener noreferrer">Űrlap megnyitása</a>
-            <a class="button secondary" style="color:#fff7e8;border-color:#fff7e8" href="mailto:contact@arsdoma.org">contact@arsdoma.org</a>
+            <a class="button" style="background:#fff7e8;color:#1f3f30;border-color:#fff7e8" href="https://docs.google.com/forms/d/e/1FAIpQLSc4Gzrqk974YVJ26c-Bu-p1VdqXYYyNC51C-GEOnLcMr-cZow/viewform" target="_blank" rel="noopener noreferrer">
+              Űrlap megnyitása
+            </a>
+            <a class="button secondary" style="color:#fff7e8;border-color:#fff7e8" href="mailto:contact@arsdoma.org">
+              contact@arsdoma.org
+            </a>
           </div>
         </div>
       </div>
