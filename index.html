@@ -5,49 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>ARSDOMA – Kapcsolódás, alkotás, kibontakozás</title>
-  <meta name="description" content="ARSDOMA – kapcsolódásból, alkotásból és figyelemből épülő fejlődési tér gyerekeknek. Első gyakorlati pilotunk nyári táborral indul 8–12 éveseknek." />
+  <meta name="description" content="ARSDOMA – kapcsolati–alkotói fejlődési rendszer gyermekeknek. Első gyakorlati pilotunk 2026 nyarán kislétszámú nyári táborral indul." />
 
   <meta property="og:title" content="ARSDOMA – Kapcsolódás, alkotás, kibontakozás" />
-  <meta property="og:description" content="Mi történik, ha egy táborban nem a program, hanem a gyerek kerül a középpontba?" />
+  <meta property="og:description" content="Mi történik, ha egy rendszer a gyermekek érdeklődéséből, kapcsolódásából és alkotókedvéből épül?" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="arsdoma-pilot-infografika.jpg" />
+  <meta property="og:url" content="https://arsdoma.hu/" />
+  <meta property="og:image" content="https://arsdoma.hu/arsdoma-pilot-infografika.jpg" />
 
   <style>
     :root {
-      --green: #2f5d44;
-      --green-dark: #1d3b2d;
-      --green-soft: #e8f0e7;
-      --cream: #f7f1e6;
-      --cream-2: #fffaf0;
-      --sand: #e4d8bf;
-      --gold: #b4872f;
-      --text: #243229;
-      --muted: #667267;
-      --line: rgba(47, 93, 68, 0.20);
-      --shadow: 0 18px 50px rgba(31, 63, 48, 0.13);
-      --radius: 28px;
+      --bg: #f7f3df;
+      --bg-soft: #fbf8e9;
+      --green-dark: #243f2d;
+      --green: #406b47;
+      --green-soft: #dfe9c8;
+      --accent: #d6b55b;
+      --accent-soft: #efe2a8;
+      --text: #243528;
+      --muted: #5f6f61;
+      --white: #ffffff;
+      --border: rgba(36, 63, 45, 0.16);
+      --shadow: 0 18px 45px rgba(36, 63, 45, 0.10);
+      --radius: 26px;
+      --max: 1120px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(47, 93, 68, 0.12), transparent 36%),
-        radial-gradient(circle at 85% 20%, rgba(180, 135, 47, 0.10), transparent 28%),
-        linear-gradient(180deg, #fbf7ec 0%, #f2ead9 100%);
-      line-height: 1.6;
+        radial-gradient(circle at top left, rgba(214, 181, 91, 0.18), transparent 32rem),
+        radial-gradient(circle at top right, rgba(64, 107, 71, 0.12), transparent 34rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
 
     .container {
-      width: min(1160px, calc(100% - 40px));
+      width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
     }
 
@@ -55,9 +73,9 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(14px);
-      background: rgba(247, 241, 230, 0.86);
-      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+      background: rgba(247, 243, 223, 0.82);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav {
@@ -65,826 +83,809 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 22px;
+      gap: 24px;
     }
 
     .brand {
       display: flex;
-      flex-direction: column;
-      line-height: 1.05;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       color: var(--green-dark);
     }
 
-    .brand strong {
-      font-size: 1.7rem;
-      letter-spacing: 0.12em;
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green), var(--accent));
+      box-shadow: 0 10px 25px rgba(36, 63, 45, 0.18);
     }
 
-    .brand span {
-      margin-top: 5px;
-      font-family: Arial, sans-serif;
-      font-size: 0.66rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+    .brand-text span {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+      font-weight: 500;
       color: var(--muted);
+      margin-top: 1px;
     }
 
-    nav ul {
+    .nav-links {
       display: flex;
       align-items: center;
       gap: 18px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      font-family: Arial, sans-serif;
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       color: var(--green-dark);
     }
 
-    nav a { opacity: 0.82; }
-    nav a:hover { opacity: 1; }
+    .nav-links a {
+      opacity: 0.86;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .hero {
+      padding: 86px 0 64px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.42);
+      color: var(--green-dark);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.16;
+      color: var(--green-dark);
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.35rem, 5vw, 4.9rem);
+      letter-spacing: -0.055em;
+      max-width: 900px;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 3.2vw, 3rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 22px;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .lead {
+      margin: 28px 0 0;
+      font-size: clamp(1.1rem, 1.6vw, 1.32rem);
+      color: var(--text);
+      max-width: 760px;
+    }
+
+    .hero-note {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid var(--border);
+      color: var(--green-dark);
+      font-weight: 650;
+      max-width: 760px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 12px 18px;
+      min-height: 48px;
+      padding: 13px 18px;
       border-radius: 999px;
-      border: 1px solid var(--green);
-      background: var(--green);
-      color: white;
-      font-family: Arial, sans-serif;
       font-weight: 700;
-      font-size: 0.95rem;
-      box-shadow: 0 10px 24px rgba(47, 93, 68, 0.22);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-      white-space: nowrap;
+      font-size: 0.98rem;
+      border: 1px solid transparent;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
     }
 
     .button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 16px 30px rgba(47, 93, 68, 0.28);
+      transform: translateY(-1px);
+    }
+
+    .button.primary {
       background: var(--green-dark);
+      color: var(--white);
+      box-shadow: 0 14px 30px rgba(36, 63, 45, 0.18);
     }
 
     .button.secondary {
-      background: transparent;
+      background: rgba(255, 255, 255, 0.58);
       color: var(--green-dark);
-      box-shadow: none;
+      border-color: var(--border);
     }
 
-    .button.secondary:hover { background: rgba(47, 93, 68, 0.08); }
-
-    .hero {
-      padding: 88px 0 58px;
-      overflow: hidden;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 42px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      margin-bottom: 18px;
-      font-family: Arial, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--gold);
-      font-size: 0.78rem;
-      font-weight: 800;
-    }
-
-    h1, h2, h3 {
+    .button.tertiary {
+      background: var(--accent-soft);
       color: var(--green-dark);
-      line-height: 1.12;
-      margin: 0;
-    }
-
-    h1 {
-      max-width: 850px;
-      font-size: clamp(2.6rem, 5.7vw, 5.25rem);
-      letter-spacing: -0.045em;
-    }
-
-    h2 {
-      margin-bottom: 18px;
-      font-size: clamp(2rem, 3.5vw, 3.35rem);
-      letter-spacing: -0.035em;
-    }
-
-    h3 {
-      margin-bottom: 10px;
-      font-size: 1.35rem;
-    }
-
-    .lead {
-      max-width: 790px;
-      margin: 24px 0 30px;
-      font-size: 1.28rem;
-      color: #37483d;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
+      border-color: rgba(214, 181, 91, 0.38);
     }
 
     .hero-card {
-      position: relative;
-      border: 1px solid var(--line);
-      background: rgba(255, 250, 240, 0.78);
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 30px;
       box-shadow: var(--shadow);
-      overflow: hidden;
     }
 
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      width: 240px;
-      height: 240px;
-      right: -90px;
-      top: -90px;
-      border-radius: 50%;
-      background: rgba(47, 93, 68, 0.10);
-    }
-
-    .hero-card-inner { position: relative; }
-
-    .hero-card-title {
-      font-size: 2rem;
-      line-height: 1.23;
-      color: var(--green-dark);
-      margin-bottom: 18px;
+    .hero-card .big {
+      font-size: 4.8rem;
+      line-height: 1;
+      color: var(--green);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+      margin-bottom: 14px;
     }
 
     .hero-card p {
-      margin: 0 0 18px;
-      color: #405044;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.04rem;
     }
 
-    .micro-list {
+    section {
+      padding: 64px 0;
+    }
+
+    .section-card {
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 4vw, 44px);
+    }
+
+    .two-col {
       display: grid;
-      gap: 10px;
-      margin: 22px 0 0;
-      padding: 0;
-      list-style: none;
-      font-family: Arial, sans-serif;
-      color: var(--green-dark);
-      font-size: 0.96rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
     }
 
-    .micro-list li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
+    .text-block p {
+      margin: 0 0 16px;
+      color: var(--text);
+      font-size: 1.04rem;
     }
 
-    .micro-list li::before {
-      content: "•";
-      color: var(--gold);
-      font-weight: 900;
+    .text-block p:last-child {
+      margin-bottom: 0;
     }
 
-    section { padding: 74px 0; }
-
-    .section-intro {
-      max-width: 820px;
-      margin: 0 0 34px;
-      font-size: 1.12rem;
-      color: #3f4e44;
+    .muted {
+      color: var(--muted);
     }
 
-    .cards {
+    .feature-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
+      margin-top: 28px;
     }
 
-    .card {
-      background: rgba(255, 250, 240, 0.78);
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 12px 34px rgba(31, 63, 48, 0.08);
-    }
-
-    .card p {
-      margin: 0;
-      color: #435348;
-    }
-
-    .wide-card {
-      background: rgba(232, 240, 231, 0.58);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 30px;
-      box-shadow: 0 12px 34px rgba(31, 63, 48, 0.07);
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 0.92fr 1.08fr;
-      gap: 36px;
-      align-items: start;
-    }
-
-    .panel {
-      background: rgba(232, 240, 231, 0.62);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 30px;
-    }
-
-    .steps {
-      display: grid;
-      gap: 14px;
-      counter-reset: step;
-    }
-
-    .step {
-      counter-increment: step;
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 16px;
-      align-items: start;
-      background: rgba(255, 250, 240, 0.72);
-      border: 1px solid rgba(47, 93, 68, 0.14);
+    .feature {
+      background: rgba(255, 255, 255, 0.52);
+      border: 1px solid var(--border);
       border-radius: 22px;
-      padding: 18px;
+      padding: 22px;
     }
 
-    .step::before {
-      content: counter(step);
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--green);
-      color: white;
-      font-family: Arial, sans-serif;
-      font-weight: 700;
-    }
-
-    .step strong {
+    .feature strong {
       display: block;
       color: var(--green-dark);
-      margin-bottom: 4px;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
     }
 
-    .camp-box,
-    .team-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .detail-list {
+    .feature p {
       margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 12px;
-      font-family: Arial, sans-serif;
-    }
-
-    .detail-list li {
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: rgba(255, 250, 240, 0.74);
-      border: 1px solid rgba(47, 93, 68, 0.16);
-    }
-
-    .price {
-      font-size: 2.2rem;
-      color: var(--green-dark);
-      font-weight: 700;
-      margin: 10px 0 4px;
-    }
-
-    .small-note {
-      font-family: Arial, sans-serif;
       color: var(--muted);
-      font-size: 0.92rem;
-      margin-top: 10px;
+      font-size: 0.98rem;
     }
 
-    .info-grid {
+    .highlight {
+      background: linear-gradient(135deg, rgba(223, 233, 200, 0.72), rgba(239, 226, 168, 0.52));
+      border: 1px solid rgba(64, 107, 71, 0.18);
+      border-radius: var(--radius);
+      padding: clamp(24px, 4vw, 44px);
+    }
+
+    .highlight p {
+      font-size: 1.08rem;
+    }
+
+    .camp-title {
+      font-size: clamp(1.8rem, 3.4vw, 3.2rem);
+      max-width: 980px;
+    }
+
+    .info-list {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
-      margin: 28px 0;
+      margin-top: 22px;
     }
 
-    .info-tile {
-      background: rgba(255, 250, 240, 0.78);
-      border: 1px solid rgba(47, 93, 68, 0.16);
+    .info-item {
+      padding: 18px 20px;
+      background: rgba(255, 255, 255, 0.52);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    .info-item strong {
+      color: var(--green-dark);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .location-card {
+      padding: 22px;
+      border: 1px solid var(--border);
       border-radius: 22px;
-      padding: 20px;
+      background: rgba(255, 255, 255, 0.54);
     }
 
-    .info-tile strong {
+    .location-card strong {
       display: block;
-      font-family: Arial, sans-serif;
       color: var(--green-dark);
       margin-bottom: 6px;
     }
 
-    .info-tile span {
-      color: #435348;
-    }
-
-    .infographic-wrap {
-      padding: 28px;
-      border-radius: 34px;
-      background: rgba(255, 250, 240, 0.72);
-      border: 1px solid var(--line);
+    .visual-box {
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.52);
       box-shadow: var(--shadow);
     }
 
-    .infographic-wrap img {
+    .visual-box img {
       width: 100%;
-      border-radius: 22px;
-      border: 1px solid rgba(47, 93, 68, 0.14);
-      background: var(--cream-2);
+      height: auto;
     }
 
-    .image-note {
-      margin: 14px 0 0;
-      font-family: Arial, sans-serif;
-      font-size: 0.9rem;
+    .visual-caption {
+      padding: 22px;
       color: var(--muted);
-      text-align: center;
+      font-size: 1rem;
     }
 
-    .contact {
-      background: var(--green-dark);
-      color: #fff7e8;
-      border-radius: 36px;
-      padding: 44px;
+    .people-grid {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 26px;
-      align-items: center;
-      box-shadow: var(--shadow);
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 26px;
     }
 
-    .contact h2 { color: #fff7e8; }
+    .person {
+      background: rgba(255, 255, 255, 0.54);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 26px;
+    }
 
-    .contact p {
-      margin: 0;
-      color: rgba(255, 247, 232, 0.86);
+    .role {
+      display: inline-flex;
+      margin: 8px 0 16px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green-dark);
+      font-size: 0.88rem;
+      font-weight: 750;
+    }
+
+    .person p {
+      margin: 0 0 14px;
+    }
+
+    .person p:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-list a {
+      color: var(--green-dark);
+      font-weight: 750;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
     }
 
     footer {
-      padding: 34px 0 48px;
-      font-family: Arial, sans-serif;
+      padding: 34px 0 46px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.92rem;
     }
 
-    .footer-row {
+    footer .container {
       display: flex;
       justify-content: space-between;
       gap: 18px;
-      border-top: 1px solid var(--line);
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
       padding-top: 24px;
     }
 
-    @media (max-width: 930px) {
-      nav ul { display: none; }
-      .hero { padding-top: 54px; }
+    @media (max-width: 880px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px 16px;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
       .hero-grid,
-      .split,
-      .camp-box,
-      .team-grid,
-      .contact { grid-template-columns: 1fr; }
-      .cards,
-      .info-grid { grid-template-columns: 1fr; }
-      .contact { padding: 30px; }
-      .footer-row { flex-direction: column; }
+      .two-col,
+      .contact-card,
+      .people-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card .big {
+        font-size: 3.6rem;
+      }
     }
 
     @media (max-width: 560px) {
-      .container { width: min(100% - 28px, 1160px); }
-      .brand strong { font-size: 1.35rem; }
-      .brand span { display: none; }
-      .nav .button { padding: 10px 13px; font-size: 0.86rem; }
-      .hero-card,
-      .infographic-wrap,
-      .panel,
-      .contact,
-      .wide-card { border-radius: 24px; padding: 22px; }
-      section { padding: 58px 0; }
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      section {
+        padding: 46px 0;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .section-card,
+      .highlight {
+        border-radius: 22px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="ARSDOMA főoldal">
-        <strong>ARSDOMA</strong>
-        <span>Relational System Design for Human Development</span>
-      </a>
+  <div class="page">
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#top" aria-label="ARSDOMA kezdőlap">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-text">
+            ARSDOMA
+            <span>Kapcsolódás · alkotás · kibontakozás</span>
+          </span>
+        </a>
 
-      <nav aria-label="Fő navigáció">
-        <ul>
-          <li><a href="#arsdoma">ARSDOMA</a></li>
-          <li><a href="#pilot">Pilot</a></li>
-          <li><a href="#camp">Nyári tábor</a></li>
-          <li><a href="#team">Kik vagyunk?</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contact">Kapcsolódás</a></li>
-        </ul>
-      </nav>
-
-      <a class="button" href="#camp">Tábor</a>
-    </div>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">ARSDOMA · kapcsolódás · alkotás · kibontakozás</div>
-          <h1>Mi történik, ha nem a program, hanem a gyerek kerül a középpontba?</h1>
-          <p class="lead">
-            Az ARSDOMA olyan közegek létrehozásán dolgozik, ahol a gyerekek biztonságban kapcsolódhatnak,
-            felfedezhetik saját erősségeiket, és megtapasztalhatják a tanulás, az alkotás és a közös jelenlét örömét.
-          </p>
-          <p class="lead" style="font-size:1.12rem; margin-top:-12px;">
-            Első gyakorlati pilotunk 2026 nyarán indul: egy kislétszámú nyári táborral 8–12 éves gyerekeknek.
-          </p>
-          <div class="hero-actions">
-            <a class="button" href="#camp">Megnézem a tábort</a>
-            <a class="button secondary" href="https://blog.arsdoma.hu" target="_blank" rel="noopener noreferrer">ARSDOMA Blog</a>
-          </div>
-        </div>
-
-        <aside class="hero-card">
-          <div class="hero-card-inner">
-            <div class="hero-card-title">Mit szeretnénk létrehozni?</div>
-            <p>
-              Olyan figyelmes, biztonságos közeget, ahol a gyerekeknek nem kell előre gyártott sablonokhoz igazodniuk,
-              hanem megmutatkozhat az érdeklődésük, az alkotókedvük és a saját ritmusuk.
-            </p>
-            <ul class="micro-list">
-              <li>biztonságos, elfogadó közeg</li>
-              <li>tér a gyerekek erősségeinek kibontakozásához</li>
-              <li>örömteli tanulási és alkotói helyzetek</li>
-              <li>figyelmes, jelenlévő felnőttkísérés</li>
-              <li>kapcsolódás gyerekek, szülők és szakemberek között</li>
-            </ul>
-          </div>
-        </aside>
+        <nav class="nav-links" aria-label="Fő navigáció">
+          <a href="#mi-az-arsdoma">Mi az ARSDOMA?</a>
+          <a href="#pilot">Pilot</a>
+          <a href="#kiknek-szol">Kiknek szól?</a>
+          <a href="#helyszin">Helyszín</a>
+          <a href="#rolunk">Rólunk</a>
+          <a href="#kapcsolat">Kapcsolat</a>
+        </nav>
       </div>
-    </section>
+    </header>
 
-    <section id="arsdoma">
-      <div class="container">
-        <div class="eyebrow">ARSDOMA</div>
-        <h2>Kapcsolódásból, alkotásból és figyelemből épülő fejlődési tér.</h2>
-        <p class="section-intro">
-          Az ARSDOMA abból indul ki, hogy a gyerekek akkor tudnak igazán tanulni, alkotni és önmagukhoz kapcsolódni,
-          ha nem kell közben védekezniük, túlalkalmazkodniuk vagy szerepet játszaniuk. A cél nem az,
-          hogy megmondjuk, mivé kell válniuk, hanem hogy olyan teret hozzunk létre, ahol láthatóbbá válhat,
-          mi érdekli őket, miben erősek, és hogyan tudnak kapcsolódni önmagukhoz, másokhoz és a világhoz.
-        </p>
-
-        <div class="cards">
-          <div class="card">
-            <h3>Kapcsolódás</h3>
-            <p>
-              A gyerek akkor tud megnyílni a világ felé, ha közben megtapasztalja, hogy nem marad egyedül az érzéseivel,
-              kérdéseivel és próbálkozásaival.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Alkotás</h3>
-            <p>
-              Az alkotás nem díszítőelem vagy jutalom, hanem természetes út ahhoz, hogy a gyerek kifejezze,
-              rendezze és továbbformálja a tapasztalatait.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Kibontakozás</h3>
-            <p>
-              A fejlődés nem egyforma tempóban és nem egyetlen úton történik. A fontos az, hogy legyen tér,
-              ahol a gyerek saját erősségei és belső iránya megjelenhetnek.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="pilot">
-      <div class="container split">
-        <div>
-          <div class="eyebrow">Pilot</div>
-          <h2>Az első gyakorlati lépés.</h2>
-          <p class="section-intro">
-            Az ARSDOMA pilotja egy élő, figyelmes indulás. A célunk az, hogy valós gyerekcsoportban,
-            szakmai teammunkával és folyamatos közös gondolkodással formáljuk tovább azt a kapcsolati–alkotói közeget,
-            amely az ARSDOMA alapját adja.
-          </p>
-          <p class="section-intro">
-            A nyári tábor az első konkrét tér, ahol ez a szemlélet gyerekekkel,
-            szülőkkel és szakemberekkel együtt elkezdhet működésbe lépni.
-          </p>
-        </div>
-
-        <div class="steps">
-          <div class="step">
-            <div>
-              <strong>Megérkezés</strong>
-              Figyelünk arra, hogyan érkezik meg a gyerek: mire kíváncsi, mihez kapcsolódik, hol óvatosabb,
-              és mi kelti fel természetesen az érdeklődését.
-            </div>
-          </div>
-
-          <div class="step">
-            <div>
-              <strong>Kapcsolati tartás</strong>
-              A felnőttek feladata nem az, hogy sürgessék a gyereket, hanem hogy olyan jelenlétet adjanak,
-              amelyben biztonságosabbá válik próbálkozni.
-            </div>
-          </div>
-
-          <div class="step">
-            <div>
-              <strong>Alkotói helyzetek</strong>
-              A gyerekek közös alkotáson, kísérletezésen, játékon, történeten, mozgáson és építésen keresztül
-              találhatnak rá saját témáikra.
-            </div>
-          </div>
-
-          <div class="step">
-            <div>
-              <strong>Közös szakmai figyelem</strong>
-              A felnőtt team folyamatosan egyeztet és tanul abból, ami a gyerekekkel történik.
-              Így a folyamat nem merev program, hanem alakuló közös tér.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="infografika">
-      <div class="container">
-        <div class="eyebrow">A pilot vizuális modellje</div>
-        <h2>A közös tér és a gyermek útja egyszerre.</h2>
-        <p class="section-intro">
-          Az infografika azt mutatja meg, hogy az ARSDOMA-ban egyszerre figyelünk a közös térre és az egyes gyerekre.
-          A kapcsolódás, az alkotás, a teammunka és a tapasztalatok beépítése nem külön részek,
-          hanem ugyanannak az élő folyamatnak az elemei.
-        </p>
-
-        <div class="infographic-wrap">
-          <img src="arsdoma-pilot-infografika.jpg" alt="Az ARSDOMA pilot magyar nyelvű infografikája: nyári tábor 8–12 éveseknek" />
-          <p class="image-note">
-            ARSDOMA pilot · kapcsolódás · alkotás · közös figyelem · gyermeki kibontakozás
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="camp">
-      <div class="container">
-        <div class="eyebrow">Nyári tábor · ARSDOMA pilot</div>
-        <h2>Tábor, ahol nem a sablonokat követjük, hanem teret adunk.</h2>
-
-        <p class="section-intro">
-          Az ARSDOMA első gyakorlati pilotja egy kislétszámú nyári táborral indul 8–12 éves gyerekeknek.
-          Olyan figyelmes, kapcsolódásra és alkotásra épülő közeget hozunk létre, ahol a gyerekek saját érdeklődése,
-          kreativitása és erősségei kerülhetnek előtérbe.
-        </p>
-
-        <div class="info-grid">
-          <div class="info-tile">
-            <strong>Korosztály</strong>
-            <span>8–12 éves gyerekek</span>
-          </div>
-
-          <div class="info-tile">
-            <strong>Részvételi díj</strong>
-            <span>75 000 Ft</span>
-          </div>
-
-          <div class="info-tile">
-            <strong>Helyszín</strong>
-            <span>Breznó vagy Budapest, Gellérthegy</span>
-          </div>
-
-          <div class="info-tile">
-            <strong>Időpont</strong>
-            <span>Idősávválasztás az űrlapon</span>
-          </div>
-        </div>
-
-        <div class="camp-box">
-          <div class="panel">
-            <h3>Konkrét információk</h3>
-            <ul class="detail-list">
-              <li><strong>Lehetséges helyszínek:</strong><br>Breznó vagy Budapest, Gellérthegy, Somlói út 50., 1118</li>
-              <li><strong>Részvételi díj:</strong><br>75 000 Ft</li>
-              <li><strong>Idősávok:</strong><br>az érdeklődési / jelentkezési űrlapon választhatók</li>
-              <li><strong>Jelentkezés:</strong><br>az űrlap kitöltésével lehet érdeklődni és időpontot egyeztetni</li>
-            </ul>
-
-            <div class="hero-actions" style="margin-top:22px;">
-              <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSc4Gzrqk974YVJ26c-Bu-p1VdqXYYyNC51C-GEOnLcMr-cZow/viewform" target="_blank" rel="noopener noreferrer">
-                Űrlap megnyitása
-              </a>
-            </div>
-
-            <p class="small-note">
-              A pontos helyszín és időpont a jelentkezések, az elérhető idősávok és a csoport összetétele alapján véglegesül.
-            </p>
-          </div>
-
-          <div class="panel">
-            <h3>Kiknek szól?</h3>
-            <ul class="detail-list">
-              <li>8–12 éves gyerekeknek</li>
-              <li>akik szeretnek építeni, kísérletezni, történetet alkotni, mozogni vagy közösen gondolkodni</li>
-              <li>akiknek fontos lehet egy nyugodtabb, figyelmesebb, kislétszámú közeg</li>
-              <li>akik szívesen kapcsolódnak más gyerekekhez, de ehhez időre és biztonságos térre van szükségük</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="wide-card" style="margin-top:24px;">
-          <h3>Mit szeretnénk adni?</h3>
-          <p>
-            Figyelmes felnőttkísérést, sikerélményt az alkotásban, örömteli tanulási és kísérletezési helyzeteket,
-            kapcsolódást, közös játékot és együtt gondolkodást. A cél az, hogy a gyerekek ne egy előre gyártott
-            programhoz alkalmazkodjanak, hanem olyan térbe érkezzenek, ahol láthatóbbá válhat, mi mozgatja őket belülről.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="parent-info">
-      <div class="container">
-        <div class="eyebrow">Szülőknek</div>
-        <h2>Mit jelent ez a gyakorlatban?</h2>
-
-        <p class="section-intro">
-          A tábor nem hagyományos értelemben vett programcsomag. Nem az a célunk, hogy minden percet előre
-          kitöltsünk, hanem hogy olyan keretet tartsunk, amelyben a gyerekek kíváncsisága, kapcsolódása és
-          alkotókedve természetesebben megjelenhet.
-        </p>
-
-        <div class="cards">
-          <div class="card">
-            <h3>Nem teljesítményt várunk</h3>
-            <p>
-              A gyerekeknek nem kell bizonyítaniuk. A hangsúly azon van, hogy biztonságosabb legyen próbálkozni,
-              hibázni, újrakezdeni és saját módon kapcsolódni.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Nem előre gyártott élményt adunk</h3>
-            <p>
-              A tevékenységek irányt adnak, de a folyamatot a gyerekek érdeklődése és a csoport alakulása is formálja.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Szakmai teammunka kíséri</h3>
-            <p>
-              A felnőttek nem egyedül „viszik” a tábort: folyamatos közös szakmai egyeztetés és reflektív teammunka
-              segíti a gyerekekhez való figyelmes kapcsolódást.
-            </p>
-          </div>
-        </div>
-
-        <div class="wide-card" style="margin-top:24px;">
-          <h3>Részletes szülői tájékoztató</h3>
-          <p>
-            A részletesebb tájékoztatóban bemutatjuk a tábor szemléletét, a gyerekekkel való munka alapelveit,
-            a kapcsolódás és alkotás szerepét, valamint a jelentkezéshez kapcsolódó gyakorlati tudnivalókat.
-          </p>
-          <div class="hero-actions" style="margin-top:22px;">
-            <a class="button" href="ARSDOMA_szuloi_tajekoztato_QR_taskan_felirattal.pdf" target="_blank" rel="noopener noreferrer">
-              Szülői tájékoztató megnyitása
-            </a>
-            <a class="button secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSc4Gzrqk974YVJ26c-Bu-p1VdqXYYyNC51C-GEOnLcMr-cZow/viewform" target="_blank" rel="noopener noreferrer">
-              Jelentkezési / érdeklődési űrlap
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="team">
-      <div class="container">
-        <div class="eyebrow">Kik vagyunk?</div>
-        <h2>Szakmai háttér a tábor mögött.</h2>
-
-        <p class="section-intro">
-          Az ARSDOMA nem kész programként, hanem alakuló szakmai és kapcsolati térként indul.
-          A tábor mögött pszichológiai, pedagógiai és alkotói gondolkodás, valamint folyamatos szakmai reflexió áll.
-        </p>
-
-        <div class="team-grid">
-          <div class="panel">
-            <h3>Bódis András</h3>
-            <p>
-              Klinikai szakpszichológus, az ARSDOMA alapítója. Több mint tíz év pszichiátriai és pszichoterápiás
-              szakmai tapasztalatra építve dolgozik azon, hogyan lehet a tanulást, az alkotást és a kapcsolódást
-              a gyerekek mentális egészségének és önazonos fejlődésének szolgálatába állítani.
-            </p>
-            <div class="hero-actions" style="margin-top:20px;">
-              <a class="button secondary" href="https://www.linkedin.com/in/andr%C3%A1s-b%C3%B3dis-30696026/" target="_blank" rel="noopener noreferrer">
-                LinkedIn profil
-              </a>
-            </div>
-          </div>
-
-          <div class="panel">
-            <h3>Dr. Domonkos Katalin</h3>
-            <p>
-              Az ARSDOMA társalapítója. Szakmai és alkotói jelenléte az ARSDOMA közös gondolkodásának,
-              kapcsolati szemléletének és gyakorlati formálódásának meghatározó része.
-            </p>
-            <div class="hero-actions" style="margin-top:20px;">
-              <a class="button secondary" href="https://www.linkedin.com/in/drdomonkoskatalin/" target="_blank" rel="noopener noreferrer">
-                LinkedIn profil
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="blog">
-      <div class="container">
-        <div class="eyebrow">ARSDOMA Blog</div>
-        <h2>Kapcsolódj az ARSDOMA alakulásához.</h2>
-        <p class="section-intro">
-          Az ARSDOMA Blog az önálló gondolkodási és kapcsolódási terünk. Írunk gyerekekről,
-          szülőségről, kapcsolódásról, tanulásról, alkotásról, erősségekről és arról,
-          hogyan formálódik az ARSDOMA a gyakorlatban.
-        </p>
-
-        <div class="wide-card">
-          <h3>Nemcsak tájékoztatni szeretnénk, hanem közösséget építeni.</h3>
-          <p>
-            A blogon keresztül követhetővé válik az ARSDOMA útja, és lehetőség nyílik arra is,
-            hogy szülők, pedagógusok és érdeklődők kapcsolódjanak a közös gondolkodáshoz.
-          </p>
-          <div class="hero-actions" style="margin-top:22px;">
-            <a class="button" href="https://blog.arsdoma.hu" target="_blank" rel="noopener noreferrer">Megnyitom a blogot</a>
-            <a class="button secondary" href="https://blog.arsdoma.hu/subscribe" target="_blank" rel="noopener noreferrer">Feliratkozom</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="contact">
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
           <div>
-            <div class="eyebrow" style="color:#cfe0ce">Kapcsolódás</div>
-            <h2>Érdekel a tábor vagy az ARSDOMA?</h2>
+            <div class="eyebrow">Első ARSDOMA-pilot · 2026 nyár</div>
+
+            <h1>Mi történik, ha egy rendszer a gyermekek érdeklődéséből, kapcsolódásából és alkotókedvéből épül?</h1>
+
+            <p class="lead">
+              Az ARSDOMA olyan kapcsolati–alkotói fejlődési rendszer, amelyben a gyermekek nemcsak részt vesznek a közös folyamatban, hanem érdeklődésükkel, kapcsolódásukkal, alkotókedvükkel és kibontakozó erősségeikkel alakítják is azt.
+            </p>
+
+            <p class="lead">
+              Olyan közeget hozunk létre, ahol a tanulás, az alkotás és a közös gondolkodás nem különálló programrészek, hanem egy figyelemmel és gondossággal kísért fejlődési tér elemei.
+            </p>
+
+            <div class="hero-note">
+              Első gyakorlati lépésként az ARSDOMA 2026 nyarán egy kislétszámú nyári táborral indul.
+            </div>
+
+            <div class="actions">
+              <a class="button primary" href="https://forms.gle/Kg2Vyx1yGuTB9LeXA" target="_blank" rel="noopener">Érdekel az ARSDOMA pilot</a>
+              <a class="button secondary" href="szuloi-tajekoztato.pdf" target="_blank" rel="noopener">Szülői tájékoztató</a>
+              <a class="button tertiary" href="https://blog.arsdoma.hu" target="_blank" rel="noopener">ARSDOMA Blog</a>
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="ARSDOMA röviden">
+            <div class="big">ARS<br>DOMA</div>
             <p>
-              Írj nekünk, vagy használd a jelentkezési / érdeklődési űrlapot.
-              A részleteket személyes kapcsolódásban pontosítjuk.
+              Kapcsolati–alkotói fejlődési rendszer gyermekeknek, ahol a közös tér, az egyes gyermek és a szakmai teammunka egyszerre kap figyelmet.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="mi-az-arsdoma">
+        <div class="container">
+          <div class="section-card text-block">
+            <h2>Mi az ARSDOMA?</h2>
+
+            <p>
+              Az ARSDOMA egy kapcsolati–alkotói fejlődési rendszer gyermekeknek.
+            </p>
+
+            <p>
+              Alapja az a felismerés, hogy a gyermekek fejlődése nem pusztán programokon, feladatokon vagy tanulási helyzeteken múlik, hanem azon a kapcsolati közegen is, amelyben jelen vannak.
+            </p>
+
+            <p>
+              Az ARSDOMA-ban egyszerre figyelünk a közös térre és az egyes gyermekre: arra, hogyan kapcsolódik, hogyan próbálkozik, hogyan alkot, hogyan vesz részt a közös folyamatban, és milyen erősségei kezdenek megmutatkozni.
+            </p>
+
+            <p>
+              A tanulás és az alkotás nálunk nem önmagában cél, hanem lehetőség arra, hogy a gyermekek kapcsolódásban, biztonságos térben és saját ritmusukban tapasztalhassák meg önmagukat és a világot.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div class="hero-actions">
-            <a class="button" style="background:#fff7e8;color:#1f3f30;border-color:#fff7e8" href="https://docs.google.com/forms/d/e/1FAIpQLSc4Gzrqk974YVJ26c-Bu-p1VdqXYYyNC51C-GEOnLcMr-cZow/viewform" target="_blank" rel="noopener noreferrer">
-              Űrlap megnyitása
-            </a>
-            <a class="button secondary" style="color:#fff7e8;border-color:#fff7e8" href="mailto:contact@arsdoma.org">
-              contact@arsdoma.org
-            </a>
+      <section id="mit-szeretnenk">
+        <div class="container">
+          <div class="two-col">
+            <div class="section-card text-block">
+              <h2>Mit szeretnénk létrehozni?</h2>
+
+              <p>
+                Olyan biztonságos, gondossággal kísért közeget, ahol a gyermekek érdeklődése, alkotókedve, saját ritmusa és kibontakozó erősségei is teret kaphatnak.
+              </p>
+
+              <p>
+                Az ARSDOMA-ban a felnőttek nem egyszerűen programot vezetnek, hanem figyelik és kísérik a közös folyamatot. A cél az, hogy a gyermekek ne csak részt vegyenek valamiben, hanem valóban jelen lehessenek: kapcsolódhassanak, próbálkozhassanak, alkothassanak, és fokozatosan megmutathassák, mi az, ami bennük alakul.
+              </p>
+
+              <p>
+                A közös munka meghatározó része a folyamatos szakmai teammunka. A tábor során szerzett tapasztalatokat rendszeresen közösen értelmezzük és beépítjük. Ez segít abban, hogy a rendszer ne merev formaként működjön, hanem érzékenyen tudjon reagálni a gyermekekre, a csoportra és a közös tér alakulására.
+              </p>
+            </div>
+
+            <div class="highlight text-block">
+              <h2>Az első gyakorlati lépés</h2>
+
+              <p>
+                Az ARSDOMA első gyakorlati formája 2026 nyarán indul.
+              </p>
+
+              <p>
+                A pilot célja, hogy az ARSDOMA szemlélete ne csak elméletként, hanem valódi, gyermekekkel, szülőkkel és szakemberekkel közösen formálódó tapasztalatként jelenjen meg.
+              </p>
+
+              <p>
+                Az első lépés egy kislétszámú nyári tábor, amelyben a kapcsolódás, az alkotás, a közös gondolkodás és a tapasztalatok beépítése egyszerre kap szerepet.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer>
-    <div class="container footer-row">
-      <div>© ARSDOMA · Bódis András · Dr. Domonkos Katalin</div>
-      <div>arsdoma.hu · blog.arsdoma.hu · contact@arsdoma.org</div>
-    </div>
-  </footer>
+      <section id="pilot">
+        <div class="container">
+          <div class="highlight text-block">
+            <h2>Az első ARSDOMA-pilot</h2>
+
+            <p>
+              <strong>Az ARSDOMA nyári táborral indul: egy kislétszámú közegben, ahol a gyermekek érdeklődését, kapcsolódását és alkotókedvét figyelemmel és gondossággal kísérjük.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="tabor">
+        <div class="container">
+          <div class="section-card text-block">
+            <h2 class="camp-title">Tábor, ahol a gyermekek érdeklődése, kapcsolódása, alkotókedve és kibontakozó erősségei is irányt adnak a közös folyamatnak.</h2>
+
+            <p>
+              A nyári tábor az ARSDOMA első gyakorlati megvalósulása.
+            </p>
+
+            <p>
+              A táborban a gyermekek építésen, kísérletezésen, történetalkotáson, mozgáson, közös gondolkodáson, STEAM-jellegű feladatokon, valamint a team tagjai által hozott egyedi kreatív és művészeti tevékenységeken keresztül vehetnek részt egy alakuló, közösen formált folyamatban.
+            </p>
+
+            <p>
+              A STEAM-feladatok — vagyis a tudományos, technológiai, mérnöki, művészeti és matematikai elemeket összekapcsoló tevékenységek — nem önmagukban állnak. Az a fontos, hogy közben hogyan kapcsolódnak a gyermekek egymáshoz, hogyan jelennek meg az érdeklődésükben, hogyan próbálkoznak, hogyan mernek kérdezni, alkotni, hibázni, újrakezdeni és együtt gondolkodni.
+            </p>
+
+            <p>
+              A tábor kislétszámú, nyugodt és gondossággal kísért közegben zajlik. Ez lehetőséget ad arra, hogy a gyermekek saját ritmusukban kapcsolódjanak, és a közös tér figyelemmel alakuljon.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="kiknek-szol">
+        <div class="container">
+          <div class="section-card text-block">
+            <h2>Kiknek szól?</h2>
+
+            <p>
+              8–12 éves gyermekeknek, akik szívesen vesznek részt építésben, kísérletezésben, történetalkotásban, mozgásban vagy közös gondolkodásban.
+            </p>
+
+            <p>
+              A tábor kislétszámú, nyugodt és gondossággal kísért közegben zajlik, mert hisszük, hogy a figyelem, a kapcsolódás és a biztonságos tér minden gyermek számára fontos fejlődési feltétel.
+            </p>
+
+            <p>
+              A közös folyamatban időt adunk arra, hogy a gyermekek saját ritmusukban kapcsolódjanak egymáshoz, alkossanak, próbálkozzanak, és megmutatkozhassanak kibontakozó erősségeik.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="helyszin">
+        <div class="container">
+          <div class="section-card text-block">
+            <h2>Helyszín</h2>
+
+            <p>
+              Az ARSDOMA első pilotja Budapest Schoolhoz kapcsolódó iskolai helyszíneken valósul meg.
+            </p>
+
+            <p>
+              A pontos helyszín a szervezési egyeztetések és a résztvevői kör alapján kerül véglegesítésre, ezért a program eltérő BPS-helyszíneken is megrendezésre kerülhet.
+            </p>
+
+            <div class="location-grid">
+              <div class="location-card">
+                <strong>Budapest School</strong>
+                <span>1118 Budapest XI. kerület, Breznó köz 8.</span>
+              </div>
+
+              <div class="location-card">
+                <strong>Budapest School</strong>
+                <span>1118 Budapest, Somlói út 50.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="kozos-ter">
+        <div class="container">
+          <div class="two-col">
+            <div class="visual-box">
+              <img src="arsdoma-pilot-infografika.jpg" alt="ARSDOMA pilot infografika – a közös tér, az egyes gyermek, az alkotás, a kapcsolódás és a teammunka összefüggései" />
+            </div>
+
+            <div class="section-card text-block">
+              <h2>Így épül fel a közös tér</h2>
+
+              <p>
+                Az infografika azt mutatja meg, hogy az ARSDOMA-ban egyszerre figyelünk a közös térre és az egyes gyermekre. A kapcsolódás, az alkotás, a teammunka és a tapasztalatok beépítése nem különálló elemek, hanem egy közösen formálódó fejlődési tér részei.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="kapcsolodas">
+        <div class="container">
+          <div class="section-card contact-card">
+            <div class="text-block">
+              <h2>Kapcsolódás</h2>
+
+              <p>
+                Az ARSDOMA első pilotja kislétszámú formában indul, ezért a jelentkezést és az érdeklődést személyes egyeztetés követi.
+              </p>
+
+              <p>
+                A cél az, hogy a gyermek, a család és a közös tér szempontjai egyaránt figyelmet kapjanak.
+              </p>
+
+              <p>
+                A részleteket személyes egyeztetés során pontosítjuk.
+              </p>
+            </div>
+
+            <div class="actions">
+              <a class="button primary" href="https://forms.gle/Kg2Vyx1yGuTB9LeXA" target="_blank" rel="noopener">Érdeklődöm a pilot iránt</a>
+              <a class="button secondary" href="szuloi-tajekoztato.pdf" target="_blank" rel="noopener">Szülői tájékoztató megnyitása</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog">
+        <div class="container">
+          <div class="section-card text-block">
+            <h2>ARSDOMA Blog</h2>
+
+            <p>
+              Az ARSDOMA Blogon keresztül követhetővé tesszük, hogyan alakul a gondolkodásunk, a gyakorlatunk és a közös tanulási folyamatunk.
+            </p>
+
+            <p>
+              Nemcsak tájékoztatni szeretnénk, hanem teret adni a közös gondolkodásnak: arról, hogyan teremthető olyan fejlődési közeg, amelyben a gyermekek kapcsolódhatnak, alkothatnak, és saját erősségeik mentén bontakozhatnak ki.
+            </p>
+
+            <div class="actions">
+              <a class="button primary" href="https://blog.arsdoma.hu" target="_blank" rel="noopener">ARSDOMA Blog megnyitása</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="szakmai-hatter">
+        <div class="container">
+          <div class="section-card text-block">
+            <h2>Szakmai háttér</h2>
+
+            <p>
+              Az ARSDOMA gyakorlati indulása mellett a szakmai és elméleti háttér külön felületen is követhető.
+            </p>
+
+            <p>
+              Az ARSDOMA.org oldalon bővebben olvasható az a szakmai gondolkodás, amely az ARSDOMA kapcsolati–alkotói rendszerét megalapozza.
+            </p>
+
+            <div class="actions">
+              <a class="button primary" href="https://arsdoma.org" target="_blank" rel="noopener">ARSDOMA.org megnyitása</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="rolunk">
+        <div class="container">
+          <div class="section-card">
+            <h2>Rólunk</h2>
+
+            <div class="people-grid">
+              <article class="person">
+                <h3>Bódis András</h3>
+                <div class="role">Alapító</div>
+
+                <p>
+                  Bódis András klinikai szakpszichológus, az ARSDOMA alapítója. Munkájában a kapcsolati biztonság, a mentális egészség megőrzése és az önazonos fejlődés feltételeinek rendszerszintű megértése áll a középpontban.
+                </p>
+
+                <p>
+                  Az ARSDOMA-ban azt a kérdést vizsgálja és formálja gyakorlattá, hogyan hozható létre olyan fejlődési rendszer, amelyben a gyermekek nem alkalmazkodási kényszerben, hanem kapcsolódásban, alkotásban és biztonságos térben bontakozhatnak ki.
+                </p>
+              </article>
+
+              <article class="person">
+                <h3>Dr. Domonkos Katalin</h3>
+                <div class="role">Társalapító</div>
+
+                <p>
+                  Dr. Domonkos Katalin gyakorló pedagógus, aki évtizedek óta a gyermekek számára biztonságos, megtartó fejlődési környezet megteremtésén dolgozik.
+                </p>
+
+                <p>
+                  Szakmai jelenléte az ARSDOMA-ban különösen fontos: pedagógiai tapasztalata, gyermekekre hangolt figyelme és gyakorlati tudása segíti, hogy az ARSDOMA ne pusztán gondolati keret, hanem valóban működő, gyermekek számára megtapasztalható közeg legyen.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="kapcsolat">
+        <div class="container">
+          <div class="highlight contact-card">
+            <div class="text-block">
+              <h2>Kapcsolat</h2>
+
+              <p>
+                Az ARSDOMA első pilotja 2026 nyarán indul.
+              </p>
+
+              <p>
+                Ha szülőként, pedagógusként vagy szakmai érdeklődőként kapcsolódnál, írj nekünk.
+              </p>
+            </div>
+
+            <div class="contact-list">
+              <div><strong>E-mail:</strong> <a href="mailto:contact@arsdoma.org">contact@arsdoma.org</a></div>
+              <div><strong>Honlap:</strong> <a href="https://arsdoma.hu" target="_blank" rel="noopener">arsdoma.hu</a></div>
+              <div><strong>Szakmai háttér:</strong> <a href="https://arsdoma.org" target="_blank" rel="noopener">arsdoma.org</a></div>
+              <div><strong>Blog:</strong> <a href="https://blog.arsdoma.hu" target="_blank" rel="noopener">blog.arsdoma.hu</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div>© 2026 ARSDOMA</div>
+        <div>Kapcsolódás · alkotás · kibontakozás</div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
