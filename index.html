@@ -10,7 +10,7 @@
   <meta property="og:title" content="ARSDOMA – Kapcsolódás, alkotás, kibontakozás" />
   <meta property="og:description" content="Mi történik, ha egy rendszer a gyermekek érdeklődéséből, kapcsolódásából és alkotókedvéből épül?" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="arsdoma-pilot-infografika.jpg" />
+  <meta property="og:image" content="./arsdoma-pilot-infografika.jpg" />
 
   <style>
     :root {
@@ -27,6 +27,7 @@
       --shadow: 0 22px 60px rgba(49, 66, 37, 0.12);
       --radius: 28px;
       --max: 1120px;
+      --wide: 1360px;
     }
 
     * {
@@ -56,12 +57,17 @@
       margin: 0 auto;
     }
 
+    .page.wide {
+      width: min(var(--wide), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
     header {
       position: sticky;
       top: 0;
       z-index: 10;
       backdrop-filter: blur(18px);
-      background: rgba(247, 243, 223, 0.86);
+      background: rgba(247, 243, 223, 0.88);
       border-bottom: 1px solid var(--line);
     }
 
@@ -116,6 +122,7 @@
 
     .hero {
       padding: 84px 0 68px;
+      border-top: none;
     }
 
     .hero-grid {
@@ -125,18 +132,9 @@
       align-items: center;
     }
 
-    .eyebrow {
-      margin: 0 0 16px;
-      color: var(--green);
-      font-weight: 650;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.86rem;
-    }
-
     h1 {
       margin: 0;
-      font-size: clamp(2.45rem, 7vw, 5.2rem);
+      font-size: clamp(2.75rem, 7vw, 5.4rem);
       line-height: 0.95;
       letter-spacing: -0.055em;
       color: var(--green-dark);
@@ -150,12 +148,12 @@
     }
 
     .hero-question {
-      margin: 34px 0 0;
+      margin: 36px 0 0;
       font-size: clamp(1.55rem, 3.5vw, 3.05rem);
       line-height: 1.08;
       letter-spacing: -0.04em;
       color: var(--text);
-      max-width: 870px;
+      max-width: 900px;
     }
 
     .hero-text {
@@ -180,7 +178,7 @@
     }
 
     .cta-panel {
-      background: rgba(255, 253, 244, 0.76);
+      background: rgba(255, 253, 244, 0.78);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 28px;
@@ -325,18 +323,48 @@
       color: var(--green-dark);
     }
 
-    .infographic-wrap {
-      margin-top: 30px;
-      background: rgba(255, 253, 244, 0.68);
+    .full-width-section {
+      padding: 70px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .full-section-heading {
+      max-width: 900px;
+      margin-bottom: 32px;
+    }
+
+    .full-section-heading h2 {
+      margin: 0 0 16px;
+      color: var(--green-dark);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+    }
+
+    .full-section-heading p {
+      margin: 0;
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .infographic-full {
+      width: 100%;
+      background: rgba(255, 253, 244, 0.76);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: clamp(18px, 3vw, 34px);
+      border-radius: 28px;
+      padding: 18px;
       box-shadow: var(--shadow);
     }
 
-    .infographic-wrap img {
-      width: 100%;
+    .infographic-full a {
       display: block;
+    }
+
+    .infographic-full img {
+      display: block;
+      width: 100%;
+      height: auto;
       border-radius: 18px;
     }
 
@@ -454,7 +482,8 @@
     }
 
     @media (max-width: 560px) {
-      .page {
+      .page,
+      .page.wide {
         width: min(100% - 22px, var(--max));
       }
 
@@ -480,6 +509,15 @@
 
       .wide-statement {
         font-size: 1.75rem;
+      }
+
+      .infographic-full {
+        padding: 10px;
+        border-radius: 20px;
+      }
+
+      .infographic-full img {
+        border-radius: 14px;
       }
     }
   </style>
@@ -507,7 +545,6 @@
     <section class="hero">
       <div class="page hero-grid">
         <div>
-          <p class="eyebrow">Kapcsolódás, alkotás, kibontakozás</p>
           <h1>ARSDOMA</h1>
           <p class="hero-subtitle">Kapcsolódás, alkotás, kibontakozás</p>
 
@@ -540,7 +577,7 @@
             <a class="btn primary" href="https://forms.gle/Kg2Vyx1yGuTB9LeXA" target="_blank" rel="noopener">
               Érdekel az ARSDOMA pilot
             </a>
-            <a class="btn" href="szuloi-tajekoztato.pdf" target="_blank" rel="noopener">
+            <a class="btn" href="./szuloi-tajekoztato.pdf" target="_blank" rel="noopener">
               Szülői tájékoztató
             </a>
             <a class="btn" href="https://blog.arsdoma.hu" target="_blank" rel="noopener">
@@ -713,20 +750,19 @@
       </div>
     </section>
 
-    <section id="kozos-ter">
-      <div class="page section-inner">
-        <div class="section-label">
+    <section id="kozos-ter" class="full-width-section">
+      <div class="page wide">
+        <div class="full-section-heading">
           <h2>Így épül fel a közös tér</h2>
-        </div>
-
-        <div class="content">
           <p>
             Az infografika azt mutatja meg, hogy az ARSDOMA-ban egyszerre figyelünk a közös térre és az egyes gyermekre. A kapcsolódás, az alkotás, a teammunka és a tapasztalatok beépítése nem különálló elemek, hanem egy közösen formálódó fejlődési tér részei.
           </p>
+        </div>
 
-          <div class="infographic-wrap">
-            <img src="arsdoma-pilot-infografika.jpg" alt="ARSDOMA infografika a közös fejlődési tér elemeiről" />
-          </div>
+        <div class="infographic-full">
+          <a href="./arsdoma-pilot-infografika.jpg" target="_blank" rel="noopener">
+            <img src="./arsdoma-pilot-infografika.jpg" alt="ARSDOMA infografika a közös fejlődési tér elemeiről" />
+          </a>
         </div>
       </div>
     </section>
@@ -754,7 +790,7 @@
             <a class="btn primary" href="https://forms.gle/Kg2Vyx1yGuTB9LeXA" target="_blank" rel="noopener">
               Érdeklődöm a pilot iránt
             </a>
-            <a class="btn" href="szuloi-tajekoztato.pdf" target="_blank" rel="noopener">
+            <a class="btn" href="./szuloi-tajekoztato.pdf" target="_blank" rel="noopener">
               Szülői tájékoztató megnyitása
             </a>
           </div>
