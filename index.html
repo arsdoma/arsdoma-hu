@@ -441,6 +441,63 @@
       text-underline-offset: 4px;
     }
 
+.thinking-section {
+  padding: 90px 20px;
+}
+
+.thinking-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.thinking-card {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(6px);
+  border-radius: 28px;
+  padding: 56px 48px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: left;
+}
+
+.thinking-label {
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7f8b72;
+  margin-bottom: 18px;
+}
+
+.thinking-card h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 28px;
+  color: #2f3b2f;
+}
+
+.thinking-text {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #4b564b;
+  margin-bottom: 18px;
+  max-width: 720px;
+}
+
+.thinking-button {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: #6f8668;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.thinking-button:hover {
+  background: #5f7458;
+  transform: translateY(-1px);
+}
     footer {
       padding: 32px 0 46px;
       color: var(--muted);
@@ -480,8 +537,22 @@
         padding: 24px;
       }
     }
+    
+    @media (max-width: 768px) {
+  .thinking-card {
+    padding: 38px 26px;
+  }
 
-    @media (max-width: 560px) {
+  .thinking-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .thinking-text {
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+      
+}    @media (max-width: 560px) {
       .page,
       .page.wide {
         width: min(100% - 22px, var(--max));
@@ -791,7 +862,38 @@
         </div>
       </div>
     </section>
+    
+    <section class="thinking-section">
+      <div class="container thinking-container">
+        <div class="thinking-card">
+          <p class="thinking-label">Gondolkodási tér</p>
 
+          <h2>Hogyan gondolkodunk?</h2>
+
+          <p class="thinking-text">
+          „Mi történik egy gyerekkel, ha nem elsősorban teljesítenie kell?
+          </p>
+
+          <p class="thinking-text">
+           Mi válik láthatóvá belőle, ha nem azonnal irányítjuk,
+           javítjuk vagy értékeljük?
+          </p>
+
+          <p class="thinking-text">
+          Az ARSDOMA ezekből a kérdésekből indul ki.”
+          </p>
+
+          <a
+           href="https://blog.arsdoma.hu/p/mi-az-arsdoma"
+           target="_blank"
+           class="thinking-button"
+          >
+          Tovább olvasom →
+          </a>
+       </div>
+    </div>
+</section>  
+    
     <section id="kapcsolodas">
       <div class="page section-inner">
         <div class="section-label">
