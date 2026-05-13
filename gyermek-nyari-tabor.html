@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>ARSDOMA gyermek nyári tábor – Kapcsolódás, alkotás, kibontakozás</title>
-  <meta name="description" content="ARSDOMA gyermek nyári tábor 8–12 éves gyermekeknek, kislétszámú, nyugodt, kapcsolódást és alkotást támogató környezetben." />
+  <meta name="description" content="ARSDOMA gyermek nyári tábor 8–12 éves gyermekeknek, kislétszámú, nyugodt, kapcsolódást támogató környezetben." />
 
   <meta property="og:title" content="ARSDOMA gyermek nyári tábor" />
-  <meta property="og:description" content="Tábor, ahol a gyermekek érdeklődése, kapcsolódása, alkotókedve és kibontakozó erősségei is irányt adnak a közös folyamatnak." />
+  <meta property="og:description" content="Kapcsolódás, alkotás, kibontakozás 8–12 éves gyermekeknek, kislétszámú, nyugodt környezetben." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./arsdoma-pilot-infografika.jpg" />
 
@@ -54,11 +54,6 @@
 
     .page {
       width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .page.wide {
-      width: min(var(--wide), calc(100% - 32px));
       margin: 0 auto;
     }
 
@@ -193,9 +188,31 @@
     }
 
     .cta-panel p {
-      margin: 0 0 22px;
+      margin: 0 0 18px;
       color: var(--muted);
       font-size: 0.98rem;
+    }
+
+    .quick-facts {
+      display: grid;
+      gap: 9px;
+      margin: 20px 0 24px;
+      font-size: 0.96rem;
+      color: var(--text);
+    }
+
+    .quick-facts div {
+      padding-bottom: 9px;
+      border-bottom: 1px solid rgba(83, 107, 63, 0.16);
+    }
+
+    .quick-facts div:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .quick-facts strong {
+      color: var(--green-dark);
     }
 
     .button-stack {
@@ -216,8 +233,8 @@
       color: var(--green-dark);
       text-decoration: none;
       font-weight: 650;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
       text-align: center;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
 
     .btn:hover {
@@ -318,34 +335,43 @@
       color: var(--green-dark);
     }
 
-    .place-list {
+    .soft-list {
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 24px;
+      gap: 12px;
     }
 
-    .place {
-      background: rgba(255, 253, 244, 0.68);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 22px;
+    .soft-list li {
+      padding: 16px 18px;
+      background: rgba(255, 253, 244, 0.58);
+      border: 1px solid rgba(83, 107, 63, 0.18);
+      border-radius: 18px;
     }
 
-    .place strong {
-      display: block;
-      margin-bottom: 8px;
+    .sub-block {
+      margin-top: 30px;
+    }
+
+    .sub-block h3 {
+      margin: 0 0 12px;
+      font-size: 1.22rem;
+      line-height: 1.25;
       color: var(--green-dark);
     }
 
-    .info-grid {
+    .time-grid,
+    .date-grid,
+    .place-list,
+    .people-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
       margin-top: 24px;
     }
 
-    .info-card {
+    .card {
       background: rgba(255, 253, 244, 0.68);
       border: 1px solid var(--line);
       border-radius: 22px;
@@ -353,16 +379,47 @@
       box-shadow: 0 10px 28px rgba(49, 66, 37, 0.05);
     }
 
-    .info-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.1rem;
-      line-height: 1.25;
+    .card strong,
+    .card h3 {
+      display: block;
+      margin: 0 0 8px;
       color: var(--green-dark);
     }
 
-    .info-card p {
+    .card p {
       margin: 0;
-      color: var(--text);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.32fr) minmax(0, 0.68fr);
+      gap: 18px;
+      padding: 20px;
+      background: rgba(255, 253, 244, 0.64);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: 0 10px 28px rgba(49, 66, 37, 0.04);
+    }
+
+    .timeline-time {
+      color: var(--green-dark);
+      font-weight: 750;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 8px;
+      color: var(--green-dark);
+      font-size: 1.08rem;
+    }
+
+    .timeline-item p {
+      margin: 0;
     }
 
     .cta-row {
@@ -438,8 +495,11 @@
 
       .hero-grid,
       .section-inner,
+      .time-grid,
+      .date-grid,
       .place-list,
-      .info-grid {
+      .people-grid,
+      .timeline-item {
         grid-template-columns: 1fr;
       }
 
@@ -453,8 +513,7 @@
     }
 
     @media (max-width: 560px) {
-      .page,
-      .page.wide {
+      .page {
         width: min(100% - 22px, var(--max));
       }
 
@@ -497,7 +556,7 @@
         <a href="./index.html#mi-az-arsdoma">Mi az ARSDOMA?</a>
         <a href="./index.html#pilot">Pilot</a>
         <a href="#top">Gyermek nyári tábor</a>
-        <a href="#jelentkezes">Kapcsolódás</a>
+        <a href="#erdeklodes">Kapcsolódás</a>
         <a href="./index.html#rolunk">Rólunk</a>
         <a href="https://blog.arsdoma.hu" target="_blank" rel="noopener">Blog</a>
       </nav>
@@ -512,84 +571,178 @@
           <p class="hero-subtitle">Gyermek nyári tábor</p>
 
           <h2 class="hero-question">
-            Tábor, ahol a gyermekek érdeklődése, kapcsolódása, alkotókedve és kibontakozó erősségei is irányt adnak a közös folyamatnak.
+            Kapcsolódás, alkotás, kibontakozás
           </h2>
 
           <div class="hero-text">
             <p>
-              Az ARSDOMA gyermek nyári tábor kislétszámú, nyugodt és gondossággal kísért közegben indul 8–12 éves gyermekek számára.
+              <strong>8–12 éves gyermekeknek, kislétszámú, nyugodt, kapcsolódást támogató környezetben.</strong>
             </p>
 
             <p>
-              Nem előre legyártott élményprogramot kínálunk, hanem olyan közös teret hozunk létre, ahol a gyermekek saját ritmusukban kapcsolódhatnak, próbálkozhatnak, alkothatnak, és megmutathatják kibontakozó erősségeiket.
+              Az ARSDOMA gyermek nyári tábor olyan közös tér, ahol nem előre legyártott élményprogramot kínálunk, hanem a gyermekek érdeklődéséből, kapcsolódásából, alkotókedvéből és kibontakozó erősségeiből építkezünk.
             </p>
-          </div>
 
-          <div class="hero-note">
-            Első gyakorlati lépésként az ARSDOMA 2026 nyarán egy kislétszámú gyermek nyári táborral indul.
+            <p>
+              Arra vagyunk kíváncsiak, ki az a gyermek, aki érkezik: mi mozgatja meg, miben leli örömét, mikor figyel fel valamire, mikor mer próbálkozni, hogyan kapcsolódik másokhoz, és milyen helyzetekben tud igazán jelen lenni.
+            </p>
+
+            <p>
+              A táborban a tanulás és az alkotás nem külön célként jelenik meg, hanem egy nyugodt, kapcsolódást támogató környezet természetes részeként.
+            </p>
           </div>
         </div>
 
-        <aside class="cta-panel" aria-label="Tábor jelentkezés">
-          <h2>Érdekel a tábor?</h2>
+        <aside class="cta-panel" aria-label="Tábor fő információk">
+          <h2>ARSDOMA gyermek nyári tábor</h2>
           <p>
-            Az érdeklődést személyes egyeztetés követi, hogy a gyermek, a család és a közös tér szempontjai egyaránt figyelmet kapjanak.
+            A tábor kislétszámú formában indul. Az érdeklődést személyes egyeztetés követi.
           </p>
+
+          <div class="quick-facts">
+            <div><strong>Időtartam:</strong> 8:00–16:00</div>
+            <div><strong>Korosztály:</strong> 8–12 év</div>
+            <div><strong>Létszám:</strong> 12 főtől indul, várhatóan 14–16 gyermekig</div>
+            <div><strong>Részvételi díj:</strong> 75 000 Ft / gyermek / hét</div>
+          </div>
 
           <div class="button-stack">
             <a class="btn primary" href="https://forms.gle/Kg2Vyx1yGuTB9LeXA" target="_blank" rel="noopener">
               Érdeklődöm a tábor iránt
             </a>
             <a class="btn" href="./szuloi-tajekoztato.pdf" target="_blank" rel="noopener">
-              Szülői tájékoztató
+              Szülői tájékoztató megnyitása
             </a>
-            <a class="btn" href="https://blog.arsdoma.hu" target="_blank" rel="noopener">
-              ARSDOMA Blog
+            <a class="btn" href="./index.html">
+              Vissza az ARSDOMA főoldalra
             </a>
           </div>
         </aside>
       </div>
     </section>
 
-    <section id="mi-ez">
+    <section id="mirol-szol">
       <div class="page section-inner">
         <div class="section-label">
-          <h2>Mi ez a tábor?</h2>
+          <h2>Miről szól a tábor?</h2>
         </div>
 
         <div class="content">
           <p class="section-lead">
-            Az ARSDOMA gyermek nyári tábor az első gyakorlati lépés egy kapcsolati–alkotói fejlődési rendszer megvalósítása felé.
+            Az ARSDOMA gyermek nyári tábor az ARSDOMA első gyakorlati megvalósulása.
           </p>
 
           <p>
-            A táborban a gyermekek nem egyszerűen programokon vesznek részt, hanem egy alakuló, közösen formált folyamat részesei. A felnőttek figyelik és kísérik a közös teret, miközben a gyermekek érdeklődése, kapcsolódása, alkotókedve és kibontakozó erősségei is irányt adnak annak, ami történik.
+            A táborban a gyermekek nem pusztán részt vesznek egy programban, hanem érdeklődésükkel, ötleteikkel, kapcsolódásukkal és próbálkozásaikkal alakítják is a közös folyamatot.
           </p>
 
           <p>
-            A cél az, hogy a gyermekek olyan közegben legyenek jelen, ahol nem csak teljesíteniük kell, hanem kapcsolódhatnak, kérdezhetnek, próbálkozhatnak, hibázhatnak, újrakezdhetnek és alkothatnak.
+            Olyan helyzeteket teremtünk, amelyekben lehet építeni, kísérletezni, mozogni, rajzolni, történetet alkotni, karaktereket kitalálni, szerepekbe lépni, kérdezni, megfigyelni, hibázni, újrakezdeni és együtt gondolkodni.
+          </p>
+
+          <p>
+            A felnőttek feladata nem az, hogy minden pillanatot előre meghatározzanak, hanem hogy olyan közeget tartsanak, ahol a gyermekek saját ritmusukban kapcsolódhatnak, próbálkozhatnak, alkothatnak és elmélyülhetnek abban, ami érdekli őket.
+          </p>
+
+          <div class="highlight">
+            <p>
+              <strong>A cél nem az, hogy a gyermek teljesítsen, hanem hogy valóban jelen lehessen: önmagával, másokkal és azzal, amit éppen alkot vagy felfedez.</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kiknek-ajanljuk">
+      <div class="page section-inner">
+        <div class="section-label">
+          <h2>Kiknek ajánljuk?</h2>
+        </div>
+
+        <div class="content">
+          <p>
+            A tábor <strong>8–12 éves, érdeklődő gyermekeknek</strong> szól, akik nyitottak az alkotásra, a közös gondolkodásra, a kísérletezésre, a történetalkotásra, a mozgásra vagy a rajzos-kreatív tevékenységekre.
+          </p>
+
+          <p>
+            Olyan gyerekeket várunk, akik szívesen vesznek részt építésben, kísérletezésben, történetalkotásban, mozgásban, rajzos vagy kreatív feladatokban, közös gondolkodásban és alkotásban.
+          </p>
+
+          <p>
+            Nem szükséges különleges előképzettség, kiemelkedő teljesítmény vagy valamelyik területen meglévő tudás. Az a fontos, hogy a gyermek érdeklődő legyen, tudjon kapcsolódni egy közös folyamathoz, és szívesen próbáljon ki új helyzeteket egy kislétszámú, nyugodt, kapcsolódást támogató környezetben.
+          </p>
+
+          <p>
+            A tábor jó választás lehet azoknak a gyermekeknek,
+          </p>
+
+          <ul class="soft-list">
+            <li>akik szeretnek építeni, kitalálni, kérdezni vagy alkotni;</li>
+            <li>akik rajzban, történetekben, szerepjátékban vagy közös játékban könnyen találnak kapcsolódási pontot;</li>
+            <li>akik szívesen gondolkodnak másokkal együtt;</li>
+            <li>akiknek jól áll egy nyugodtabb, kisebb létszámú közeg;</li>
+            <li>akikben van kíváncsiság, alkotókedv, fantázia vagy felfedező kedv;</li>
+            <li>akiknek jól jön egy olyan tér, ahol a hibázás, az újrakezdés és a próbálkozás természetes része a folyamatnak.</li>
+          </ul>
+
+          <p style="margin-top: 24px;">
+            A tábor azoknak a családoknak lehet különösen érdekes, akik nemcsak nyári elfoglaltságot keresnek, hanem olyan közeget, ahol a gyermek érdeklődése, gondolkodása, kreativitása és kibontakozó erősségei is figyelmet kapnak.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="kiknek-szol">
+    <section id="korosztaly-letszam">
       <div class="page section-inner">
         <div class="section-label">
-          <h2>Kiknek szól?</h2>
+          <h2>Korosztály és létszám</h2>
         </div>
 
         <div class="content">
           <p>
-            8–12 éves gyermekeknek, akik szívesen vesznek részt építésben, kísérletezésben, történetalkotásban, mozgásban vagy közös gondolkodásban.
+            A táborba <strong>8–12 éves gyerekeket</strong> várunk.
           </p>
 
           <p>
-            A tábor kislétszámú, nyugodt és gondossággal kísért közegben zajlik, mert hisszük, hogy a figyelem, a kapcsolódás és a biztonságos tér minden gyermek számára fontos fejlődési feltétel.
+            A tábor <strong>12 főtől indul</strong>. A felső létszámhatárt várhatóan <strong>14–16 gyermeknél</strong> húzzuk meg, a jelentkezők, a csoport összetétele, a rendelkezésre álló tér és a team végleges felállása alapján.
           </p>
 
           <p>
-            A közös folyamatban időt adunk arra, hogy a gyermekek saját ritmusukban kapcsolódjanak egymáshoz, alkossanak, próbálkozzanak, és megmutatkozhassanak kibontakozó erősségeik.
+            Ez azért fontos, mert olyan létszámmal szeretnénk dolgozni, ahol még valóban megtartható a nyugodt, kapcsolódást támogató környezet, és ahol a gyermekek saját ritmusukban kapcsolódhatnak, próbálkozhatnak, alkothatnak és részt vehetnek a közös folyamatban.
+          </p>
+
+          <div class="highlight">
+            <p>
+              A cél nem az, hogy minél nagyobb csoportot hozzunk létre, hanem hogy olyan csoporttal dolgozzunk, ahol a figyelem, a kapcsolódás, az alkotás és a közös gondolkodás valóban jelen tud lenni.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mit-elhet-meg">
+      <div class="page section-inner">
+        <div class="section-label">
+          <h2>Mit élhet meg a gyermek?</h2>
+        </div>
+
+        <div class="content">
+          <p>
+            Azt szeretnénk, hogy a gyermek a táborban megtapasztalhassa:
+          </p>
+
+          <ul class="soft-list">
+            <li>hogy az érdeklődése számít;</li>
+            <li>hogy lehet próbálkozni és hibázni;</li>
+            <li>hogy vissza lehet húzódni, majd újra kapcsolódni;</li>
+            <li>hogy lehet kérdezni, figyelni és alkotni;</li>
+            <li>hogy rajzban, történetben, szerepben, mozgásban vagy építésben is meg lehet mutatni valamit önmagából;</li>
+            <li>hogy másokkal együtt is jelen lehet, miközben önmaga marad;</li>
+            <li>hogy amit hoz magából, annak helye lehet a közös folyamatban.</li>
+          </ul>
+
+          <p style="margin-top: 24px;">
+            Számunkra nem az a legfontosabb, hogy a gyermek mit „produkál” a hét végére. Sokkal fontosabb, hogy közben hogyan kapcsolódik, hogyan mer belépni egy helyzetbe, hogyan talál rá valamire, ami érdekli, és hogyan tud jelen lenni abban, amit csinál.
           </p>
         </div>
       </div>
@@ -598,67 +751,361 @@
     <section id="tevekenysegek">
       <div class="page section-inner">
         <div class="section-label">
-          <h2>Mit csinálnak a gyerekek?</h2>
+          <h2>Mit csinálunk a táborban?</h2>
         </div>
 
         <div class="content">
-          <h2 class="wide-statement">
-            Építés, kísérletezés, történetalkotás, mozgás, közös gondolkodás és kreatív tevékenységek.
-          </h2>
-
-          <p>
-            A táborban a gyermekek építésen, kísérletezésen, történetalkotáson, mozgáson, közös gondolkodáson, STEAM-jellegű feladatokon, valamint a team tagjai által hozott egyedi kreatív és művészeti tevékenységeken keresztül vehetnek részt egy alakuló, közösen formált folyamatban.
+          <p class="section-lead">
+            A tábor tevékenységei több irányból épülnek fel.
           </p>
 
           <p>
-            A STEAM-feladatok — vagyis a tudományos, technológiai, mérnöki, művészeti és matematikai elemeket összekapcsoló tevékenységek — nem önmagukban állnak. Az a fontos, hogy közben hogyan kapcsolódnak a gyermekek egymáshoz, hogyan jelenik meg az érdeklődésük, hogyan próbálkoznak, hogyan mernek kérdezni, alkotni, hibázni, újrakezdeni és együtt gondolkodni.
+            Lesznek építő, kísérletező, STEAM-jellegű, mozgásos, rajzos, történetalkotó, dramatikus, szerepjátékos, közös gondolkodást igénylő és kreatív helyzetek.
           </p>
 
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>Alkotás</h3>
-              <p>Építés, formálás, történetalkotás, kreatív és művészeti tevékenységek.</p>
+          <p>
+            A tevékenységek nem egymástól elszigetelt „foglalkozások”, hanem olyan lehetőségek, amelyek segítik, hogy a gyermekek saját érdeklődésükön keresztül kapcsolódjanak a világhoz, egymáshoz és önmagukhoz.
+          </p>
+
+          <div class="sub-block">
+            <h3>Építés és tervezés</h3>
+            <p>
+              A gyermekek közösen vagy kisebb csoportokban hozhatnak létre tárgyakat, szerkezeteket, tereket, modelleket vagy saját elképzeléseikből születő alkotásokat.
+            </p>
+          </div>
+
+          <div class="sub-block">
+            <h3>STEAM-jellegű feladatok</h3>
+            <p>
+              A táborban lesznek tudományos, technológiai, mérnöki, művészeti és matematikai elemeket összekapcsoló kreatív feladatok is.
+            </p>
+            <p>
+              Ezek célja nem a teljesítmény, hanem a kíváncsiság, az alkotás, a problémamegoldás és a közös gondolkodás támogatása.
+            </p>
+          </div>
+
+          <div class="sub-block">
+            <h3>Kísérletezés és felfedezés</h3>
+            <p>
+              A kísérletezés nálunk nem csak tudományos feladatot jelent. Azt is jelenti, hogy a gyermek kérdezhet, kipróbálhat valamit, módosíthat, újrakezdhet, és közben megtapasztalhatja, hogy a gondolkodás élő folyamat.
+            </p>
+          </div>
+
+          <div class="sub-block">
+            <h3>Rajz, karaktertervezés és vizuális alkotás</h3>
+            <p>
+              A rajzos és vizuális tevékenységek lehetőséget adnak arra, hogy a gyermekek saját figurákat, karaktereket, képi világokat vagy közös történetekhez kapcsolódó elemeket hozzanak létre.
+            </p>
+            <p>
+              A cél nem a „szépen rajzolás”, hanem az, hogy a gyermek saját ötletei képi formát kaphassanak. A rajz itt nem teljesítmény, hanem kifejezési lehetőség.
+            </p>
+          </div>
+
+          <div class="sub-block">
+            <h3>Képregény, történet és papírbáb</h3>
+            <p>
+              A gyerekek saját történeteket, jeleneteket, képregényeket vagy papírbábokat is alkothatnak. Ezekben a folyamatokban egyszerre jelenhet meg a fantázia, a kézügyesség, a szerepalkotás, a humor, az együttműködés és a közös gondolkodás.
+            </p>
+          </div>
+
+          <div class="sub-block">
+            <h3>Történetalkotás és dramatikus játék</h3>
+            <p>
+              A történetek, szerepek, jelenetek és képzeletbeli világok lehetőséget adnak arra, hogy a gyermekek más nézőpontokat is kipróbáljanak, együttműködjenek, és saját élményeiket alkotó módon formálják.
+            </p>
+          </div>
+
+          <div class="sub-block">
+            <h3>Színház és szerepjáték</h3>
+            <p>
+              A dramatikus, színházi és szerepjátékos helyzetek segíthetik az empátia, a kommunikáció, az együttműködés és az önkifejezés fejlődését.
+            </p>
+            <p>
+              Ezekben a helyzetekben a gyermekek nemcsak szerepeket próbálhatnak ki, hanem azt is megtapasztalhatják, hogyan lehet másokkal együtt létrehozni egy közös világot.
+            </p>
+          </div>
+
+          <div class="sub-block">
+            <h3>Mozgás és testi jelenlét</h3>
+            <p>
+              A mozgásos helyzetek segítik a felszabadultabb részvételt, az együttműködést, az önszabályozást és azt, hogy a gyermek ne csak fejben, hanem teljes jelenlétével kapcsolódjon a közös térhez.
+            </p>
+          </div>
+
+          <div class="sub-block">
+            <h3>Kreatív és művészeti folyamatok</h3>
+            <p>
+              A művészeti és kreatív tevékenységek segítenek abban, hogy a gyermekek ne csak beszédben, hanem képekben, történetekben, mozgásban, szerepekben vagy közös alkotásokban is megmutathassák, ami bennük alakul.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="napirend">
+      <div class="page section-inner">
+        <div class="section-label">
+          <h2>Hogyan telik egy nap?</h2>
+        </div>
+
+        <div class="content">
+          <p>
+            A napoknak lesz egy nyugodt, követhető ritmusa, de a konkrét tartalom mindig igazodik a csoporthoz, a gyerekek érdeklődéséhez és a közös folyamat alakulásához.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-time">8:00–9:00</div>
+              <div>
+                <h3>Érkezés és ráhangolódás</h3>
+                <p>A gyerekek megérkeznek, lassan belépnek a térbe, kapcsolódnak egymáshoz és a felnőttekhez.</p>
+              </div>
             </div>
 
-            <div class="info-card">
-              <h3>Kísérletezés</h3>
-              <p>STEAM-jellegű feladatok, közös gondolkodás, próbálkozás és újrakezdés.</p>
+            <div class="timeline-item">
+              <div class="timeline-time">9:00–10:30</div>
+              <div>
+                <h3>Délelőtti alkotó vagy STEAM-blokk</h3>
+                <p>Építő, kísérletező, STEAM-jellegű vagy más alkotó feladatok jelennek meg egyéni vagy kisebb csoportos formában.</p>
+              </div>
             </div>
 
-            <div class="info-card">
-              <h3>Kapcsolódás</h3>
-              <p>Kislétszámú közeg, figyelmes felnőttkísérés, közös térben való részvétel.</p>
+            <div class="timeline-item">
+              <div class="timeline-time">10:30–11:00</div>
+              <div>
+                <h3>Szünet, mozgás, szabadabb kapcsolódás</h3>
+                <p>Mozgásosabb, szabadabb szakasz, amely segít kilépni az intenzívebb alkotásból.</p>
+              </div>
             </div>
 
-            <div class="info-card">
-              <h3>Kibontakozás</h3>
-              <p>A gyermekek saját ritmusának, érdeklődésének és erősségeinek figyelembevétele.</p>
+            <div class="timeline-item">
+              <div class="timeline-time">11:00–12:30</div>
+              <div>
+                <h3>Történet, rajz, szerepjáték vagy közös projekt</h3>
+                <p>Megjelenhet történetalkotás, karaktertervezés, képregény, papírbáb, dramatikus játék vagy szerepjáték.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">12:30–13:30</div>
+              <div>
+                <h3>Ebédszünet és pihenő</h3>
+                <p>Nyugodtabb szakasz, amelyben van idő enni, pihenni, beszélgetni, visszahúzódni vagy csendesebben jelen lenni.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">13:30–15:00</div>
+              <div>
+                <h3>Délutáni közös alkotás</h3>
+                <p>A gyerekek visszatérhetnek egy korábbi ötlethez, folytathatnak egy közös projektet, vagy új irányba vihetik az alkotást.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">15:00–15:30</div>
+              <div>
+                <h3>Napzáró kör</h3>
+                <p>Röviden visszanézünk arra, mi történt: mi volt érdekes, mi volt nehéz, mi sikerült, mi alakult tovább.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-time">15:30–16:00</div>
+              <div>
+                <h3>Lezárás és hazamenetel</h3>
+                <p>A nap utolsó szakasza nyugodtabb átmenet. Befejezzük, amit még szeretnénk, összepakolunk, és fokozatosan lezárjuk a napot.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="kozeg">
+    <section id="segitok">
       <div class="page section-inner">
         <div class="section-label">
-          <h2>Milyen közegben zajlik?</h2>
+          <h2>Segítőink és szakmai–alkotói hátterünk</h2>
         </div>
 
         <div class="content">
           <p>
-            A tábor kislétszámú, nyugodt és gondossággal kísért közegben zajlik. Ez lehetőséget ad arra, hogy a gyermekek saját ritmusukban kapcsolódjanak, és a közös tér figyelemmel alakuljon.
+            A táborban fontos szerepet kapnak azok a segítők, akik saját szakmai, pedagógiai, művészeti és alkotói tapasztalatukkal kapcsolódnak az ARSDOMA szemléletéhez.
           </p>
 
           <p>
-            A közös munka meghatározó része a folyamatos szakmai teammunka. A tábor során szerzett tapasztalatokat rendszeresen közösen értelmezzük és beépítjük.
+            A közös cél az, hogy a gyerekek ne csupán programokon vegyenek részt, hanem olyan helyzetekbe kerüljenek, ahol kapcsolódhatnak, alkothatnak, próbálkozhatnak, és fokozatosan megmutatkozhatnak kibontakozó erősségeik.
+          </p>
+
+          <div class="people-grid">
+            <article class="card">
+              <h3>Gábor Zsuzsa</h3>
+              <p>
+                Gábor Zsuzsa szociálpedagógus, aki évek óta dolgozik csoportokkal, gyerekekkel, kamaszokkal és felnőttekkel.
+              </p>
+              <p>
+                Munkájában a kreatív, önismereti és közösségi módszerek különösen fontosak: filmkészítéssel, színjátszással, közös alkotással, dramatikus és filmes foglalkozásokkal is dolgozott.
+              </p>
+              <p>
+                Művészetterápiás, pszichodrámás és dokumentumfilmes képzettsége és tapasztalata segíti abban, hogy a csoporthelyzetekben ne csak a tevékenységet lássa, hanem azt is, hogyan kapcsolódnak egymáshoz a résztvevők, hogyan jelennek meg az ötleteik, és hogyan tudnak belépni egy közös alkotó folyamatba.
+              </p>
+              <p>
+                Dolgozott iskolákban, vezetett napközis táborokat, és többféle gyerek- és ifjúsági csoporttal szerzett tapasztalatot. Az ARSDOMA táborban Zsuzsa jelenléte azért értékes, mert olyan alkotói és csoportos helyzeteket tud támogatni, amelyekben a gyerekek film, történet, játék, dramatikus helyzet vagy közös alkotás formájában találhatnak kapcsolódási pontot önmagukhoz és egymáshoz.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Kormos Mercédesz</h3>
+              <p>
+                Kormos Mercédesz kreatív, rajzos és történetalkotó tevékenységekkel kapcsolódik az ARSDOMA táborhoz.
+              </p>
+              <p>
+                Munkájában fontos szerepet kap a vizuális alkotás, a karaktertervezés, a képregény, a papírbáb, a történet, a színház és a szerepjáték.
+              </p>
+              <p>
+                A gyermekekkel való közös alkotásban számára kiemelt érték a kreativitás, az empátia, a kommunikáció és az együttműködés fejlesztése. Olyan helyzeteket hoz, amelyekben a gyerekek saját figurákat, történeteket, jeleneteket és képzeletbeli világokat formálhatnak meg.
+              </p>
+              <p>
+                Az általa képviselt kreatív irány jól illeszkedik az ARSDOMA szemléletéhez: a rajz, a szerepalkotás és a közös történet nem önmagában cél, hanem lehetőség arra, hogy a gyermekek kapcsolatba kerüljenek saját ötleteikkel, egymással és a közös alkotás örömével.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kisletszam">
+      <div class="page section-inner">
+        <div class="section-label">
+          <h2>Miért fontos a kislétszám?</h2>
+        </div>
+
+        <div class="content">
+          <p>
+            Az ARSDOMA tábor szándékosan kislétszámú formában indul.
+          </p>
+
+          <p>
+            Ez nem pusztán szervezési kérdés, hanem a tábor szemléletének része. Kisebb létszámban több figyelem jut arra, hogyan alakul a csoport, hogyan kapcsolódnak egymáshoz a gyerekek, milyen ritmusban tudnak belépni a közös folyamatba, és mire van szükségük ahhoz, hogy saját ritmusukban tudjanak próbálkozni, alkotni és együtt gondolkodni.
           </p>
 
           <div class="highlight">
             <p>
-              Ez segít abban, hogy a rendszer ne merev formaként működjön, hanem érzékenyen tudjon reagálni a gyermekekre, a csoportra és a közös tér alakulására.
+              A kislétszám lehetővé teszi, hogy ne csak megtartsuk a programot, hanem valóban figyeljük is, mi történik a gyermekekkel, a kapcsolódásokkal és a közös térrel.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="biztonsag">
+      <div class="page section-inner">
+        <div class="section-label">
+          <h2>Érzelmi biztonság és bizalom</h2>
+        </div>
+
+        <div class="content">
+          <p>
+            A táborban nem abból indulunk ki, hogy mit kell a gyermekben kijavítani. Abból indulunk ki, hogy mi érdekli, miben tud kapcsolódni, hol jelennek meg az erősségei, és milyen közegben tud bátrabban próbálkozni.
+          </p>
+
+          <p>
+            Amikor egy gyermek azt tapasztalja, hogy nemcsak a hibáit veszik észre, hanem a benne rejlő értékeket is, könnyebben mer kérdezni, hibázni, újrakezdeni és kapcsolódni.
+          </p>
+
+          <p>
+            Ezért az érzelmi biztonság számunkra nem külön „téma”, hanem a tábor működésének alapja. Azt szeretnénk, hogy a gyermekek olyan térben legyenek jelen, ahol nem kell folyamatosan megfelelniük ahhoz, hogy kapcsolódhassanak.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kiseres">
+      <div class="page section-inner">
+        <div class="section-label">
+          <h2>Hogyan kísérjük a gyerekeket?</h2>
+        </div>
+
+        <div class="content">
+          <p>
+            A táborban a felnőttek szerepe kettős.
+          </p>
+
+          <p>
+            Egyrészt olyan kapcsolati közeget tartanak, ahol a gyermekek saját ritmusukban kapcsolódhatnak, próbálkozhatnak, alkothatnak és részt vehetnek a közös folyamatban.
+          </p>
+
+          <p>
+            Másrészt finoman támogatják azokat a folyamatokat, ahol a gondolkodás, az alkotás, a játék vagy az együttműködés elmélyülhet.
+          </p>
+
+          <div class="highlight">
+            <p>
+              A tábor során szerzett tapasztalatokat a team rendszeresen közösen értelmezi és beépíti. Ez segít abban, hogy a tábor ne merev programként működjön, hanem érzékenyen tudjon reagálni a gyermekekre, a csoportra és a közös tér alakulására.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mitol-arsdoma">
+      <div class="page section-inner">
+        <div class="section-label">
+          <h2>Mitől ARSDOMA ez a tábor?</h2>
+        </div>
+
+        <div class="content">
+          <p>
+            Az ARSDOMA-ban a tanulás, az alkotás és a kapcsolódás nem különálló célok.
+          </p>
+
+          <p>
+            A táborban azt figyeljük, hogyan tud a gyermek egy közös térben jelen lenni, hogyan talál rá arra, ami érdekli, hogyan kapcsolódik másokhoz, és hogyan tudja saját ötleteit, kérdéseit vagy élményeit alkotó módon formálni.
+          </p>
+
+          <p>
+            Az ARSDOMA szemléletében a gyermek nem passzív résztvevő. A gyermek érdeklődése, kapcsolódása, alkotókedve és kibontakozó erősségei valóban irányt adnak a közös folyamatnak.
+          </p>
+
+          <div class="highlight">
+            <p>
+              Ezért mondjuk, hogy a tábor nem a teljesítményről szól, hanem arról, hogy a gyermekek valóban jelen lehessenek abban, amit csinálnak.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="idopontok">
+      <div class="page section-inner">
+        <div class="section-label">
+          <h2>Lehetséges időpontok</h2>
+        </div>
+
+        <div class="content">
+          <p>
+            Az ARSDOMA gyermek nyári tábor pontos időpontja még szervezés alatt áll.
+          </p>
+
+          <p>
+            Az érdeklődő családok több lehetséges időpont közül jelezhetik, melyik hét lenne számukra megfelelő. A válaszok segítenek abban, hogy olyan hetet válasszunk, amely a legtöbb érdeklődő család és a szervezői team számára is vállalható.
+          </p>
+
+          <p>
+            A jelenleg megjelölt lehetséges időpontok:
+          </p>
+
+          <div class="date-grid">
+            <div class="card"><strong>2026. július 6–10.</strong></div>
+            <div class="card"><strong>2026. július 27–31.</strong></div>
+            <div class="card"><strong>2026. augusztus 3–7.</strong></div>
+            <div class="card"><strong>2026. augusztus 17–21.</strong></div>
+            <div class="card"><strong>2026. augusztus 24–28.</strong></div>
+          </div>
+
+          <p style="margin-top: 24px;">
+            Az érdeklődési űrlapon több időpont is megjelölhető.
+          </p>
         </div>
       </div>
     </section>
@@ -685,6 +1132,10 @@
           </div>
 
           <p>
+            Az étkezés pontos szervezését a jelentkező családokkal külön egyeztetjük.
+          </p>
+
+          <p>
             A pontos részleteket és a jelentkezés feltételeit személyes egyeztetés során pontosítjuk.
           </p>
         </div>
@@ -706,36 +1157,56 @@
             A pontos helyszín a szervezési egyeztetések és a résztvevői kör alapján kerül véglegesítésre, ezért a program eltérő BPS-helyszíneken is megrendezésre kerülhet.
           </p>
 
+          <p>
+            Lehetséges helyszínek:
+          </p>
+
           <div class="place-list" aria-label="Lehetséges BPS-helyszínek">
-            <div class="place">
+            <div class="card">
               <strong>Budapest School</strong>
-              1118 Budapest XI. kerület,<br />
-              Breznó köz 8.
+              <p>
+                1118 Budapest XI. kerület,<br />
+                Breznó köz 8.
+              </p>
             </div>
 
-            <div class="place">
+            <div class="card">
               <strong>Budapest School</strong>
-              1118 Budapest,<br />
-              Somlói út 50.
+              <p>
+                1118 Budapest,<br />
+                Somlói út 50.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="jelentkezes">
+    <section id="erdeklodes">
       <div class="page section-inner">
         <div class="section-label">
-          <h2>Kapcsolódás</h2>
+          <h2>Érdeklődés és jelentkezés</h2>
         </div>
 
         <div class="content">
           <p class="section-lead">
-            A tábor iránti érdeklődést személyes egyeztetés követi.
+            Az ARSDOMA gyermek nyári tábor kislétszámú formában indul, ezért az érdeklődést személyes egyeztetés követi.
           </p>
 
           <p>
-            A cél az, hogy a gyermek, a család és a közös tér szempontjai egyaránt figyelmet kapjanak. A jelentkezés és a részvétel részleteit személyes egyeztetés során pontosítjuk.
+            Ez segít abban, hogy a gyermek, a család és a közös tér szempontjai is figyelmet kapjanak.
+          </p>
+
+          <p>
+            Az érdeklődési űrlapon megadható a szülő neve, e-mail-címe, telefonszáma, a gyermek neve és életkora, valamint az is, hogy melyik nyári időpont lenne megfelelő a család számára. Az űrlap arra is lehetőséget ad, hogy a szülő röviden jelezze, mi érdekli a gyermekét, miben leli örömét, vagy mi az, amit jó lenne róla tudnunk.
+          </p>
+
+          <p>
+            Ez azért fontos, mert nem egyszerűen helyeket töltünk fel, hanem olyan csoportot szeretnénk kialakítani, ahol a gyermekek, a családok és a közös tér szempontjai is figyelmet kapnak.
+          </p>
+
+          <p>
+            Ha szülőként úgy érzed, hogy ez a tábor illeszkedhet a gyermekedhez, az alábbi űrlapon tudsz érdeklődni.
           </p>
 
           <div class="cta-row">
@@ -745,35 +1216,9 @@
             <a class="btn" href="./szuloi-tajekoztato.pdf" target="_blank" rel="noopener">
               Szülői tájékoztató megnyitása
             </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="blog">
-      <div class="page section-inner">
-        <div class="section-label">
-          <h2>ARSDOMA Blog</h2>
-        </div>
-
-        <div class="content">
-          <div class="blog-panel">
-            <p>
-              Az ARSDOMA Blogon keresztül követhetővé tesszük, hogyan alakul a gondolkodásunk, a gyakorlatunk és a közös tanulási folyamatunk.
-            </p>
-
-            <p>
-              A tábor az első gyakorlati belépési pont, a blog pedig a közös gondolkodás tere: arról, hogyan teremthető olyan fejlődési közeg, amelyben a gyermekek kapcsolódhatnak, alkothatnak, és saját erősségeik mentén bontakozhatnak ki.
-            </p>
-
-            <div class="cta-row">
-              <a class="btn primary" href="https://blog.arsdoma.hu" target="_blank" rel="noopener">
-                ARSDOMA Blog megnyitása
-              </a>
-              <a class="btn" href="./index.html">
-                Vissza az ARSDOMA főoldalra
-              </a>
-            </div>
+            <a class="btn" href="https://blog.arsdoma.hu" target="_blank" rel="noopener">
+              ARSDOMA Blog
+            </a>
           </div>
         </div>
       </div>
@@ -785,16 +1230,12 @@
           <h2>Kapcsolat</h2>
 
           <p>
-            Az ARSDOMA gyermek nyári tábor 2026 nyarán indul.
-          </p>
-
-          <p>
-            Ha szülőként, pedagógusként vagy szakmai érdeklődőként kapcsolódnál, írj nekünk.
+            Kérdés esetén írj nekünk:
           </p>
 
           <div class="contact-lines">
             <div><strong>E-mail:</strong> <a href="mailto:contact@arsdoma.org">contact@arsdoma.org</a></div>
-            <div><strong>Honlap:</strong> <a href="https://arsdoma.hu">arsdoma.hu</a></div>
+            <div><strong>Főoldal:</strong> <a href="https://arsdoma.hu">arsdoma.hu</a></div>
             <div><strong>Szakmai háttér:</strong> <a href="https://arsdoma.org" target="_blank" rel="noopener">arsdoma.org</a></div>
             <div><strong>Blog:</strong> <a href="https://blog.arsdoma.hu" target="_blank" rel="noopener">blog.arsdoma.hu</a></div>
           </div>
