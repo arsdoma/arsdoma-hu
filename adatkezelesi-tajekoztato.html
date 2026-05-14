@@ -1,1 +1,731 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>Adatkezelési tájékoztató – ARSDOMA gyermek nyári tábor</title>
+  <meta name="description" content="Adatkezelési tájékoztató az ARSDOMA gyermek nyári tábor iránti érdeklődéshez kapcsolódó adatkezelésről." />
+
+  <meta property="og:title" content="Adatkezelési tájékoztató – ARSDOMA" />
+  <meta property="og:description" content="Az ARSDOMA gyermek nyári tábor iránti érdeklődéshez kapcsolódó adatkezelési tájékoztató." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --bg: #f7f3df;
+      --bg-soft: #fbf8e9;
+      --green: #536b3f;
+      --green-dark: #314225;
+      --green-soft: #dbe4c3;
+      --yellow: #e4c95e;
+      --text: #253020;
+      --muted: #6b705f;
+      --line: rgba(83, 107, 63, 0.22);
+      --white: #fffdf4;
+      --shadow: 0 22px 60px rgba(49, 66, 37, 0.12);
+      --radius: 28px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(228, 201, 94, 0.20), transparent 32rem),
+        linear-gradient(180deg, var(--bg) 0%, #f4efcf 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(247, 243, 223, 0.88);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-decoration: none;
+    }
+
+    .brand-title {
+      font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+      font-weight: 750;
+      letter-spacing: 0.10em;
+      color: var(--green-dark);
+      white-space: nowrap;
+    }
+
+    .brand-line {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.94rem;
+      color: var(--green-dark);
+      white-space: nowrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      opacity: 0.86;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    main {
+      padding-bottom: 72px;
+    }
+
+    .hero {
+      padding: 68px 0 52px;
+      border-top: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 44px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 5.5vw, 4.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      color: var(--green-dark);
+    }
+
+    .hero-subtitle {
+      margin: 18px 0 0;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      color: var(--green);
+      font-weight: 560;
+    }
+
+    .hero-question {
+      margin: 28px 0 0;
+      font-size: clamp(1.45rem, 3vw, 2.45rem);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      max-width: 900px;
+    }
+
+    .hero-text {
+      margin: 22px 0 0;
+      max-width: 780px;
+      font-size: 1.08rem;
+      color: var(--text);
+    }
+
+    .hero-text p {
+      margin: 0 0 18px;
+    }
+
+    .cta-panel {
+      background: rgba(255, 253, 244, 0.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-panel h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      color: var(--green-dark);
+    }
+
+    .cta-panel p {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .button-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(49, 66, 37, 0.22);
+      background: var(--white);
+      color: var(--green-dark);
+      text-decoration: none;
+      font-weight: 650;
+      text-align: center;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(49, 66, 37, 0.12);
+      background: #fffbea;
+    }
+
+    .btn.primary {
+      background: var(--green-dark);
+      color: #fffdf4;
+      border-color: var(--green-dark);
+    }
+
+    .btn.primary:hover {
+      background: #26351c;
+    }
+
+    section {
+      padding: 58px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-inner {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.34fr) minmax(0, 0.66fr);
+      gap: 52px;
+      align-items: start;
+    }
+
+    .section-label {
+      position: sticky;
+      top: 104px;
+    }
+
+    .section-label h2 {
+      margin: 0;
+      color: var(--green-dark);
+      font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    .content {
+      font-size: 1.05rem;
+    }
+
+    .content p {
+      margin: 0 0 18px;
+    }
+
+    .content strong {
+      color: var(--green-dark);
+    }
+
+    .content ul {
+      margin: 16px 0 24px;
+      padding-left: 1.25rem;
+    }
+
+    .content li {
+      margin: 0 0 8px;
+    }
+
+    .section-lead {
+      margin: 0 0 28px;
+      padding: 16px 20px;
+      font-size: clamp(1.15rem, 1.55vw, 1.34rem);
+      line-height: 1.48;
+      font-weight: 720;
+      letter-spacing: -0.012em;
+      color: var(--green-dark);
+      background: rgba(255, 253, 244, 0.66);
+      border-left: 4px solid var(--yellow);
+      border-radius: 16px;
+      box-shadow: 0 8px 22px rgba(49, 66, 37, 0.045);
+    }
+
+    .legal-card {
+      background: rgba(255, 253, 244, 0.70);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(24px, 4vw, 38px);
+      box-shadow: 0 12px 36px rgba(49, 66, 37, 0.07);
+    }
+
+    .legal-card h2 {
+      margin: 0 0 18px;
+      font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      color: var(--green-dark);
+    }
+
+    .legal-card h3 {
+      margin: 34px 0 12px;
+      font-size: 1.22rem;
+      line-height: 1.25;
+      color: var(--green-dark);
+    }
+
+    .legal-card h3:first-of-type {
+      margin-top: 12px;
+    }
+
+    .legal-card p {
+      margin: 0 0 18px;
+    }
+
+    .legal-card a {
+      color: var(--green-dark);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      font-weight: 650;
+    }
+
+    .legal-note {
+      margin: 28px 0 0;
+      padding: 20px 22px;
+      background: rgba(255, 253, 244, 0.72);
+      border-left: 5px solid var(--yellow);
+      border-radius: 18px;
+      color: var(--green-dark);
+      font-weight: 650;
+    }
+
+    .contact-box {
+      background: var(--green-dark);
+      color: #fffdf4;
+      border-radius: var(--radius);
+      padding: clamp(28px, 5vw, 48px);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box h2 {
+      margin: 0 0 18px;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      letter-spacing: -0.04em;
+    }
+
+    .contact-box p {
+      margin: 0 0 16px;
+      color: rgba(255, 253, 244, 0.86);
+    }
+
+    .contact-lines {
+      display: grid;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .contact-lines a {
+      color: #fffdf4;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    footer {
+      padding: 32px 0 46px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      border-top: 1px solid var(--line);
+    }
+
+    footer a {
+      color: var(--green-dark);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0;
+        gap: 12px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px 16px;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      .hero-grid,
+      .section-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .section-label {
+        position: static;
+      }
+
+      .cta-panel {
+        padding: 24px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 22px, var(--max));
+      }
+
+      .brand-title {
+        font-size: 1.35rem;
+      }
+
+      .brand-line {
+        font-size: 0.72rem;
+      }
+
+      .nav-links {
+        font-size: 0.88rem;
+      }
+
+      section {
+        padding: 44px 0;
+      }
+
+      .hero-question {
+        font-size: 1.85rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="page nav">
+      <a class="brand" href="./index.html" aria-label="ARSDOMA kezdőlap">
+        <span class="brand-title">ARSDOMA</span>
+        <span class="brand-line">Relational System Design for Human Development</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Fő navigáció">
+        <a href="./index.html#mi-az-arsdoma">Mi az ARSDOMA?</a>
+        <a href="./index.html#pilot">Pilot</a>
+        <a href="./gyermek-nyari-tabor.html">Gyermek nyári tábor</a>
+        <a href="./index.html#kapcsolodas">Kapcsolódás</a>
+        <a href="./index.html#rolunk">Rólunk</a>
+        <a href="https://blog.arsdoma.hu" target="_blank" rel="noopener">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="page hero-grid">
+        <div>
+          <h1>Adatkezelési tájékoztató</h1>
+          <p class="hero-subtitle">ARSDOMA gyermek nyári tábor</p>
+
+          <h2 class="hero-question">
+            Tájékoztatás az érdeklődési űrlapon megadott személyes adatok kezeléséről.
+          </h2>
+
+          <div class="hero-text">
+            <p>
+              Jelen adatkezelési tájékoztató az ARSDOMA gyermek nyári tábor iránti érdeklődéshez, kapcsolatfelvételhez, időpont-egyeztetéshez és a tábor szervezéséhez kapcsolódó személyes adatok kezeléséről ad tájékoztatást.
+            </p>
+          </div>
+        </div>
+
+        <aside class="cta-panel" aria-label="Adatkezelési összefoglaló">
+          <h2>Hatályos</h2>
+          <p>
+            <strong>2026. május 14-től</strong>
+          </p>
+
+          <p>
+            Kapcsolattartási e-mail:
+            <br />
+            <a href="mailto:contact@arsdoma.org">contact@arsdoma.org</a>
+          </p>
+
+          <div class="button-stack">
+            <a class="btn primary" href="./gyermek-nyari-tabor.html">
+              Vissza a gyermek nyári tábor oldalra
+            </a>
+            <a class="btn" href="./index.html">
+              Vissza az ARSDOMA főoldalra
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="page">
+        <div class="legal-card">
+          <h2>Adatkezelési tájékoztató</h2>
+
+          <p class="section-lead">
+            Az adatkezelés során törekszünk arra, hogy csak olyan adatokat kérjünk és kezeljünk, amelyek a tábor iránti érdeklődés kezeléséhez, a szülőkkel való kapcsolatfelvételhez, az időpont-egyeztetéshez és a szervezési lépésekhez szükségesek.
+          </p>
+
+          <h3>1. Az adatkezelő</h3>
+
+          <p>
+            <strong>Adatkezelő neve:</strong> Bódis András / ARSDOMA<br />
+            <strong>Kapcsolattartási e-mail:</strong> <a href="mailto:contact@arsdoma.org">contact@arsdoma.org</a><br />
+            <strong>Honlap:</strong> <a href="https://arsdoma.hu">https://arsdoma.hu</a><br />
+            <strong>Szakmai háttér:</strong> <a href="https://arsdoma.org" target="_blank" rel="noopener">https://arsdoma.org</a>
+          </p>
+
+          <p>
+            Adatvédelmi tisztviselő kijelölésére nem került sor.
+          </p>
+
+          <h3>2. Az adatkezelés célja</h3>
+
+          <p>Az adatkezelés célja:</p>
+
+          <ul>
+            <li>az ARSDOMA gyermek nyári tábor iránti érdeklődés fogadása és kezelése;</li>
+            <li>kapcsolatfelvétel a szülővel / törvényes képviselővel;</li>
+            <li>időpont-egyeztetés;</li>
+            <li>a gyermek életkorának és alapvető érdeklődési területeinek megismerése a tábori csoport szervezése érdekében;</li>
+            <li>a tábor szervezéséhez szükséges előzetes egyeztetések lefolytatása;</li>
+            <li>a jelentkező családok tájékoztatása a táborral kapcsolatos további lépésekről.</li>
+          </ul>
+
+          <p>
+            Az adatkezelés nem diagnosztikai, terápiás vagy egészségügyi célból történik.
+          </p>
+
+          <h3>3. A kezelt személyes adatok köre</h3>
+
+          <p>Az érdeklődési űrlapon az alábbi adatok megadására kerülhet sor:</p>
+
+          <ul>
+            <li>szülő / törvényes képviselő neve;</li>
+            <li>e-mail-cím;</li>
+            <li>telefonszám;</li>
+            <li>gyermek neve;</li>
+            <li>gyermek életkora;</li>
+            <li>választott vagy lehetséges nyári időpontok;</li>
+            <li>a gyermek érdeklődésével, örömforrásaival, kapcsolódásával vagy a tábori részvétel szempontjából fontos információkkal kapcsolatos rövid szöveges válasz;</li>
+            <li>egyéb kérdés vagy megjegyzés, amelyet a szülő önként megad.</li>
+          </ul>
+
+          <p>
+            Az űrlapon nem kérünk egészségügyi, diagnosztikus vagy más különleges személyes adatot. Kérjük, hogy ilyen adatot az űrlapon ne adj meg. Ha a tábori részvétel kapcsán ilyen kérdés merül fel, azt külön személyes egyeztetés során kezeljük.
+          </p>
+
+          <h3>4. Az adatkezelés jogalapja</h3>
+
+          <p>
+            Az adatkezelés jogalapja az érintett, illetve a gyermek esetében a szülő / törvényes képviselő hozzájárulása.
+          </p>
+
+          <p>
+            A hozzájárulás az érdeklődési űrlap kitöltésével és az adatkezelési tájékoztató tudomásulvételével történik.
+          </p>
+
+          <p>
+            A hozzájárulás bármikor visszavonható a következő e-mail-címen:
+            <br />
+            <strong><a href="mailto:contact@arsdoma.org">contact@arsdoma.org</a></strong>
+          </p>
+
+          <p>
+            A hozzájárulás visszavonása nem érinti a visszavonás előtt végzett adatkezelés jogszerűségét.
+          </p>
+
+          <h3>5. Az adatok forrása</h3>
+
+          <p>
+            Az adatokat a szülő / törvényes képviselő adja meg az ARSDOMA gyermek nyári tábor iránti érdeklődési űrlapon.
+          </p>
+
+          <h3>6. Az adatkezelés időtartama</h3>
+
+          <p>
+            Az adatokat az érdeklődés kezeléséhez és a tábor szervezéséhez szükséges ideig kezeljük.
+          </p>
+
+          <p>
+            Amennyiben a gyermek nem vesz részt a táborban, az adatokat legkésőbb a tábor szervezésének lezárását követő <strong>6 hónapon belül</strong> töröljük.
+          </p>
+
+          <p>
+            Amennyiben a gyermek részt vesz a táborban, a részvételhez kapcsolódó szervezési adatokat a tábor lezárását követő <strong>1 évig</strong> kezeljük, kivéve, ha jogi, számviteli vagy egyéb kötelezettség ennél hosszabb megőrzést ír elő.
+          </p>
+
+          <p>
+            A későbbi ARSDOMA-programokról szóló értesítésre vonatkozó adatokat csak külön, önkéntes hozzájárulás esetén kezeljük, a hozzájárulás visszavonásáig.
+          </p>
+
+          <h3>7. Kik férhetnek hozzá az adatokhoz?</h3>
+
+          <p>
+            A megadott adatokhoz kizárólag azok az ARSDOMA-hoz kapcsolódó szervezők és szakmai közreműködők férhetnek hozzá, akiknek ez a tábor iránti érdeklődés kezelése, a kapcsolatfelvétel, az időpont-egyeztetés vagy a tábor szervezése érdekében szükséges.
+          </p>
+
+          <p>
+            Az adatokat harmadik személynek marketingcélra nem adjuk át.
+          </p>
+
+          <h3>8. Google Forms használata</h3>
+
+          <p>
+            Az érdeklődési űrlap Google Forms segítségével működik. Az űrlap kitöltésekor a megadott adatok a Google szolgáltatásain keresztül kerülnek rögzítésre és tárolásra.
+          </p>
+
+          <p>
+            A Google szolgáltatásainak használatára a Google saját adatvédelmi és adatbiztonsági feltételei is vonatkoznak. Az ARSDOMA törekszik arra, hogy az űrlap használata során csak a tábor szervezéséhez szükséges adatokat kérje be.
+          </p>
+
+          <p>
+            A Google szolgáltatásai technikai adatfeldolgozási szerepet tölthetnek be az űrlap működtetése, az adatok rögzítése és tárolása során.
+          </p>
+
+          <h3>9. Adattovábbítás</h3>
+
+          <p>
+            Az adatokat nem továbbítjuk harmadik félnek, kivéve, ha az a tábor szervezése, jogi kötelezettség teljesítése vagy az érintett kifejezett kérése alapján szükséges.
+          </p>
+
+          <h3>10. Automatizált döntéshozatal</h3>
+
+          <p>
+            Az adatkezelés során nem alkalmazunk automatizált döntéshozatalt vagy profilalkotást.
+          </p>
+
+          <p>
+            A tábori részvétellel kapcsolatos döntések nem automatizált rendszer alapján, hanem emberi mérlegeléssel, személyes egyeztetés alapján történnek.
+          </p>
+
+          <h3>11. Az érintettek jogai</h3>
+
+          <p>
+            Az érintett, illetve a gyermek képviseletében a szülő / törvényes képviselő jogosult:
+          </p>
+
+          <ul>
+            <li>tájékoztatást kérni az adatkezelésről;</li>
+            <li>hozzáférést kérni a kezelt személyes adatokhoz;</li>
+            <li>kérni a pontatlan adatok helyesbítését;</li>
+            <li>kérni az adatok törlését;</li>
+            <li>kérni az adatkezelés korlátozását;</li>
+            <li>tiltakozni az adatkezelés ellen, amennyiben ennek jogszabályi feltételei fennállnak;</li>
+            <li>hozzájáruláson alapuló adatkezelés esetén a hozzájárulást visszavonni.</li>
+          </ul>
+
+          <p>
+            Az érintetti jogok gyakorlására irányuló kérelmet a következő e-mail-címen lehet jelezni:
+            <br />
+            <strong><a href="mailto:contact@arsdoma.org">contact@arsdoma.org</a></strong>
+          </p>
+
+          <p>
+            A kérelmeket indokolatlan késedelem nélkül, legkésőbb a jogszabályban meghatározott határidőn belül válaszoljuk meg.
+          </p>
+
+          <h3>12. Jogorvoslati lehetőség</h3>
+
+          <p>
+            Amennyiben úgy érzed, hogy a személyes adataid kezelése nem megfelelően történik, először kérjük, vedd fel velünk a kapcsolatot a következő e-mail-címen:
+            <br />
+            <strong><a href="mailto:contact@arsdoma.org">contact@arsdoma.org</a></strong>
+          </p>
+
+          <p>
+            Emellett panasszal fordulhatsz a Nemzeti Adatvédelmi és Információszabadság Hatósághoz.
+          </p>
+
+          <p>
+            <strong>Nemzeti Adatvédelmi és Információszabadság Hatóság</strong><br />
+            Honlap: <a href="https://www.naih.hu" target="_blank" rel="noopener">https://www.naih.hu</a><br />
+            E-mail: <a href="mailto:ugyfelszolgalat@naih.hu">ugyfelszolgalat@naih.hu</a><br />
+            Postacím: 1363 Budapest, Pf. 9.<br />
+            Cím: 1055 Budapest, Falk Miksa utca 9–11.
+          </p>
+
+          <h3>13. A tájékoztató módosítása</h3>
+
+          <p>
+            Az adatkezelési tájékoztató időről időre módosulhat. Az aktuális változat mindig az ARSDOMA honlapján érhető el:
+          </p>
+
+          <p>
+            <a href="https://arsdoma.hu/adatkezelesi-tajekoztato.html">https://arsdoma.hu/adatkezelesi-tajekoztato.html</a>
+          </p>
+
+          <div class="legal-note">
+            Hatályos: 2026. május 14-től
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kapcsolat">
+      <div class="page">
+        <div class="contact-box">
+          <h2>Kapcsolat</h2>
+
+          <p>
+            Adatkezeléssel kapcsolatos kérdés vagy kérelem esetén írj nekünk.
+          </p>
+
+          <div class="contact-lines">
+            <div><strong>E-mail:</strong> <a href="mailto:contact@arsdoma.org">contact@arsdoma.org</a></div>
+            <div><strong>Főoldal:</strong> <a href="https://arsdoma.hu">arsdoma.hu</a></div>
+            <div><strong>Gyermek nyári tábor:</strong> <a href="./gyermek-nyari-tabor.html">gyermek nyári tábor oldal</a></div>
+            <div><strong>Blog:</strong> <a href="https://blog.arsdoma.hu" target="_blank" rel="noopener">blog.arsdoma.hu</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="page">
+      © 2026 ARSDOMA · Kapcsolódás, alkotás, kibontakozás ·
+      <a href="./adatkezelesi-tajekoztato.html">Adatkezelési tájékoztató</a>
+    </div>
+  </footer>
+</body>
+</html>
