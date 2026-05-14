@@ -135,11 +135,20 @@
       color: var(--green-dark);
     }
 
+    .hero-heading-block {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      width: fit-content;
+      max-width: 100%;
+    }
+
     .hero-subtitle {
-      margin: 18px 0 0;
+      margin: 10px 0 0;
       font-size: clamp(1.15rem, 2.2vw, 1.55rem);
       color: var(--green);
       font-weight: 560;
+      text-align: center;
     }
 
     .hero-question {
@@ -567,8 +576,10 @@
     <section class="hero">
       <div class="page hero-grid">
         <div>
-          <h1>ARSDOMA</h1>
-          <p class="hero-subtitle">Gyermek nyári tábor</p>
+          <div class="hero-heading-block">
+            <h1>ARSDOMA</h1>
+            <p class="hero-subtitle">Gyermek nyári tábor</p>
+          </div>
 
           <h2 class="hero-question">
             Kapcsolódás, alkotás, kibontakozás
