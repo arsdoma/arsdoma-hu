@@ -553,8 +553,17 @@
     margin-bottom: 36px;
   }
 
-  .hero-grid {
+  .hero-grid,
+  .section-inner,
+  .time-grid,
+  .date-grid,
+  .place-list,
+  .people-grid,
+  .timeline-item {
     grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
     gap: 36px;
   }
 
@@ -562,26 +571,15 @@
     height: 260px;
     border-radius: 24px;
   }
+
+  .section-label {
+    position: static;
+  }
+
+  .cta-panel {
+    padding: 24px;
+  }
 }
-
-      .hero-grid,
-      .section-inner,
-      .time-grid,
-      .date-grid,
-      .place-list,
-      .people-grid,
-      .timeline-item {
-        grid-template-columns: 1fr;
-      }
-
-      .section-label {
-        position: static;
-      }
-
-      .cta-panel {
-        padding: 24px;
-      }
-    }
 
     @media (max-width: 560px) {
       .page {
@@ -685,42 +683,46 @@
         </div>
       </div>
 
-      <aside class="hero-card">
-        <h2>ARSDOMA gyermek nyári tábor</h2>
+      <aside class="cta-panel hero-card">
+  <h2>ARSDOMA gyermek nyári tábor</h2>
 
-        <p>
-          A tábor kislétszámú formában indul. Az érdeklődést személyes egyeztetés követi.
-        </p>
+  <p>
+    A tábor kislétszámú formában indul. Az érdeklődést személyes egyeztetés követi.
+  </p>
 
-        <div class="camp-details">
-          <p><strong>Időtartam:</strong> 8:00–16:00</p>
-          <p><strong>Korcsoport:</strong> 8–12 év</p>
-          <p><strong>Létszám:</strong> 12 főtől indul, várhatóan 14–16 gyermekig</p>
-          <p><strong>Részvételi díj:</strong> 75 000 Ft / gyermek / hét</p>
-        </div>
+  <div class="quick-facts">
+    <div><strong>Időtartam:</strong> 8:00–16:00</div>
+    <div><strong>Korcsoport:</strong> 8–12 év</div>
+    <div><strong>Létszám:</strong> 12 főtől indul, várhatóan 14–16 gyermekig</div>
+    <div><strong>Részvételi díj:</strong> 75 000 Ft / gyermek / hét</div>
+  </div>
 
-        <a
-          class="button primary-button"
-          href="https://docs.google.com/forms/d/e/1FAIpQLSc4Gzrqk974YVJ26c-Bu-p1VdqXYYyNC51C-GEOnLcMr-cZow/viewform"
-          target="_blank"
-          rel="noopener"
-        >
-          Érdeklődöm a tábor iránt
-        </a>
+  <div class="button-stack">
+    <a
+      class="btn primary"
+      href="https://forms.gle/Kg2Vyx1yGuTB9LeXA"
+      target="_blank"
+      rel="noopener"
+    >
+      Érdeklődöm a tábor iránt
+    </a>
 
-        <a
-          class="button secondary-button"
-          href="szuloi-tajekoztato.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          Szülői tájékoztató megnyitása
-        </a>
+    <a
+      class="btn"
+      href="./szuloi-tajekoztato.pdf"
+      target="_blank"
+      rel="noopener"
+    >
+      Szülői tájékoztató megnyitása
+    </a>
 
-        <a class="button secondary-button" href="index.html">
-          Vissza az ARSDOMA főoldalra
-        </a>
-      </aside>
+    <a class="btn" href="./index.html">
+      Vissza az ARSDOMA főoldalra
+    </a>
+  </div>
+</aside>
+
+      
     </div>
 
   </div>
