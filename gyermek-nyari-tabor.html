@@ -127,6 +127,22 @@
       align-items: center;
     }
 
+     .hero-side {
+       display: flex;
+       flex-direction: column;
+       gap: 22px;
+    }
+
+    .hero-image {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    
     h1 {
       margin: 0;
       font-size: clamp(2.75rem, 7vw, 5.4rem);
@@ -635,31 +651,41 @@
           </div>
         </div>
 
-        <aside class="cta-panel" aria-label="Tábor fő információk">
-          <h2>ARSDOMA gyermek nyári tábor</h2>
-          <p>
-            A tábor kislétszámú formában indul. Az érdeklődést személyes egyeztetés követi.
-          </p>
+                <aside class="hero-side" aria-label="Tábor fő információk">
+          <img
+            src="./arsdoma-hero.jpg"
+            alt="Gyermekek alkotó, nyugodt közös térben"
+            class="hero-image"
+          />
 
-          <div class="quick-facts">
-            <div><strong>Időtartam:</strong> 8:00–16:00</div>
-            <div><strong>Korosztály:</strong> 8–12 év</div>
-            <div><strong>Létszám:</strong> 12 főtől indul, várhatóan 14–16 gyermekig</div>
-            <div><strong>Részvételi díj:</strong> 75 000 Ft / gyermek / hét</div>
-          </div>
+          <div class="cta-panel">
+            <h2>ARSDOMA gyermek nyári tábor</h2>
+            <p>
+              A tábor kislétszámú formában indul. Az érdeklődést személyes egyeztetés követi.
+            </p>
 
-          <div class="button-stack">
-            <a class="btn primary" href="https://forms.gle/Kg2Vyx1yGuTB9LeXA" target="_blank" rel="noopener">
-              Érdeklődöm a tábor iránt
-            </a>
-            <a class="btn" href="./szuloi-tajekoztato.pdf" target="_blank" rel="noopener">
-              Szülői tájékoztató megnyitása
-            </a>
-            <a class="btn" href="./index.html">
-              Vissza az ARSDOMA főoldalra
-            </a>
+            <div class="quick-facts">
+              <div><strong>Időtartam:</strong> 8:00–16:00</div>
+              <div><strong>Korosztály:</strong> 8–12 év</div>
+              <div><strong>Létszám:</strong> 12 főtől indul, várhatóan 14–16 gyermekig</div>
+              <div><strong>Részvételi díj:</strong> 75 000 Ft / gyermek / hét</div>
+            </div>
+
+            <div class="button-stack">
+              <a class="btn primary" href="https://forms.gle/Kg2Vyx1yGuTB9LeXA" target="_blank" rel="noopener">
+                Érdeklődöm a tábor iránt
+              </a>
+              <a class="btn" href="./szuloi-tajekoztato.pdf" target="_blank" rel="noopener">
+                Szülői tájékoztató megnyitása
+              </a>
+              <a class="btn" href="./index.html">
+                Vissza az ARSDOMA főoldalra
+              </a>
+            </div>
           </div>
         </aside>
+
+        
       </div>
     </section>
 
