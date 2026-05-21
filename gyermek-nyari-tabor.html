@@ -696,6 +696,91 @@
   z-index: 2;
 }
 
+#kiknek-ajanljuk {
+  position: relative;
+  overflow: hidden;
+}
+
+#kiknek-ajanljuk .section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.recommend-stamps {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.recommend-stamp-question {
+  width: 130px;
+  height: 88px;
+  left: 145px;
+  top: 185px;
+  color: #6f835d;
+  font-size: 19px;
+  transform: rotate(-11deg);
+  opacity: 0.82;
+}
+
+.recommend-stamp-try {
+  width: 160px;
+  height: 108px;
+  right: 150px;
+  bottom: 42px;
+  color: #6f835d;
+  font-size: 18px;
+  transform: rotate(9deg);
+  opacity: 0.82;
+}
+
+.green-try-splash {
+  position: absolute;
+  left: 330px;
+  bottom: 60px;
+  width: 135px;
+  height: 100px;
+  opacity: 0.28;
+  filter: blur(0.7px);
+  background:
+    radial-gradient(circle at 45% 48%, #536b3f 0 24px, transparent 27px),
+    radial-gradient(circle at 27% 60%, #536b3f 0 8px, transparent 10px),
+    radial-gradient(circle at 15% 76%, #536b3f 0 5px, transparent 7px),
+    radial-gradient(circle at 70% 24%, #536b3f 0 5px, transparent 7px),
+    radial-gradient(circle at 82% 66%, #536b3f 0 6px, transparent 8px),
+    radial-gradient(circle at 8% 48%, #536b3f 0 3px, transparent 5px),
+    radial-gradient(circle at 94% 42%, #536b3f 0 4px, transparent 6px);
+}
+
+@media (max-width: 900px) {
+  .recommend-stamps {
+    position: relative;
+    min-height: 180px;
+    margin: 18px 0 0;
+  }
+
+  .recommend-stamp-question {
+    left: 8px;
+    top: 10px;
+  }
+
+  .green-try-splash {
+    left: 40px;
+    bottom: 8px;
+    width: 115px;
+    height: 85px;
+  }
+
+  .recommend-stamp-try {
+    right: 12px;
+    bottom: 8px;
+    width: 142px;
+    height: 98px;
+    font-size: 16px;
+  }
+}
+    
 @media (max-width: 900px) {
   .decor-stamps {
     position: relative;
@@ -982,6 +1067,22 @@
     </section>
 
     <section id="kiknek-ajanljuk">
+
+      <div class="recommend-stamps" aria-hidden="true">
+      <div class="stamp recommend-stamp-question">
+        nekem<br>
+        való?
+       <span class="stamp-doodle">✿</span>
+      </div>
+
+      <div class="green-try-splash"></div>
+
+      <div class="stamp recommend-stamp-try">
+        itt lehet<br>
+        próbálkozni<br>
+        :)
+       </div>
+     </div>      
       <div class="page section-inner">
         <div class="section-label">
           <h2>Kiknek ajánljuk?</h2>
