@@ -736,6 +736,91 @@
   opacity: 0.82;
 }
 
+.letszam-stamps {
+  position: relative;
+  width: min(100%, 320px);
+  min-height: 260px;
+  margin-top: 34px;
+  pointer-events: none;
+}
+
+.letszam-stamps .stamp::before {
+  border-width: 4px;
+  border-radius: 22px;
+  opacity: 0.58;
+}
+
+.letszam-stamps .stamp::after {
+  opacity: 0.16;
+}
+
+.letszam-stamp-team {
+  width: 142px;
+  height: 92px;
+  left: 4px;
+  top: 0;
+  color: #6f835d;
+  font-size: 18px;
+  transform: rotate(-8deg);
+  opacity: 0.80;
+}
+
+.letszam-stamp-rhythm {
+  width: 168px;
+  height: 96px;
+  left: 92px;
+  top: 72px;
+  color: #d59a23;
+  font-size: 18px;
+  transform: rotate(6deg);
+  opacity: 0.78;
+}
+
+.letszam-stamp-attention {
+  width: 164px;
+  height: 96px;
+  left: 22px;
+  top: 152px;
+  color: #6f835d;
+  font-size: 18px;
+  transform: rotate(-4deg);
+  opacity: 0.78;
+}
+
+@media (max-width: 900px) {
+  .letszam-stamps {
+    width: 300px;
+    max-width: 100%;
+    min-height: 168px;
+    margin-top: 22px;
+    margin-bottom: 8px;
+  }
+
+  .letszam-stamp-team {
+    width: 126px;
+    height: 78px;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+  }
+
+  .letszam-stamp-rhythm {
+    width: 148px;
+    height: 82px;
+    left: 118px;
+    top: 24px;
+    font-size: 16px;
+  }
+
+  .letszam-stamp-attention {
+    width: 148px;
+    height: 82px;
+    left: 42px;
+    top: 92px;
+    font-size: 16px;
+  }
+}    
+
 .green-try-splash {
   position: absolute;
   left: 330px;
@@ -1124,9 +1209,27 @@
 
     <section id="korosztaly-letszam">
       <div class="page section-inner">
+        
         <div class="section-label">
-          <h2>Korosztály és létszám</h2>
-        </div>
+  <h2>Korosztály és létszám</h2>
+
+  <div class="letszam-stamps" aria-hidden="true">
+    <div class="stamp letszam-stamp-team">
+      kis<br>
+      csapatban
+    </div>
+
+    <div class="stamp letszam-stamp-rhythm">
+      saját<br>
+      ritmusban
+    </div>
+
+    <div class="stamp letszam-stamp-attention">
+      figyelem<br>
+      jut rám
+    </div>
+  </div>
+</div>
 
         <div class="content">
           <p>
