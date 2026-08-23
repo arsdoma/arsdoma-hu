@@ -192,6 +192,11 @@ h1 { margin: 0; color: var(--forest); font-size: clamp(4rem, 11vw, 8.5rem); font
 .hero-field span:nth-child(2) { inset: 13%; border-color: var(--pollen); transform: rotate(18deg); }
 .hero-field span:nth-child(3) { inset: 28%; transform: rotate(-12deg); }
 
+.camp-status-page .hero-grid { min-height: calc(100svh - 4.6rem); align-items: center; }
+.camp-status-page h1 { max-width: 11ch; font-size: clamp(3.4rem, 8vw, 6.5rem); line-height: 0.94; }
+.camp-status-lead { max-width: 43rem; margin: clamp(2.6rem, 5vw, 4.5rem) 0 0; color: var(--forest); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.65rem, 3.4vw, 2.8rem); letter-spacing: -0.03em; line-height: 1.12; }
+.camp-status-copy { max-width: 43rem; margin: 1.8rem 0 0; color: var(--ink-soft); font-size: clamp(1.05rem, 1.5vw, 1.2rem); }
+
 .section { padding-block: clamp(5.5rem, 10vw, 9rem); border-bottom: 1px solid var(--line); }
 
 .section-heading h2 {
